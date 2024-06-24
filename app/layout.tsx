@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
+import { NavLink } from "@/components/NavLink";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex flex-col h-screen`}>
+        <nav className="border-b flex w-full justify-center gap-1 py-4">
+          <NavLink
+            className="hover:bg-stone-100 text-sm py-1 px-3 rounded-full"
+            activeClassName="text-sm py-1 px-3 rounded-full bg-foreground text-white"
+            href="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            className="hover:bg-stone-100 text-sm py-1 px-3 rounded-full"
+            activeClassName="text-sm py-1 px-3 rounded-full bg-foreground text-white"
+            href="/dashboard/settings"
+          >
+            Settings
+          </NavLink>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
