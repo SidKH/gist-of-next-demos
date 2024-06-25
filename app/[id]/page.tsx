@@ -6,18 +6,6 @@ type Params = {
   };
 };
 
-export async function generateMetadata({ params }: Params) {
-  const show: Show = await fetch(
-    `https://api.tvmaze.com/shows/${params.id}`
-  ).then((res) => res.json());
-
-  return {
-    title: show.name,
-    description:
-      show.summary.replace(/<[^>]*>?/gm, "").substring(0, 200) + "...",
-  };
-}
-
 export default async function Page({ params }: Params) {
   const show: Show = await fetch(
     `https://api.tvmaze.com/shows/${params.id}`
