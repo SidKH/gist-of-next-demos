@@ -1,9 +1,34 @@
-export default function Home() {
+import { Show } from "@/types";
+import { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "TV Shows",
+  description: "List of tv shows",
+};
+
+export default async function Home() {
+  const shows: Show[] = await fetch(
+    "https://api.tvmaze.com/shows?q=batman"
+  ).then((res) => res.json());
+
+  const showList = shows.slice(0, 16);
+
   return (
-    <main className="flex min-h-screen justify-center items-center">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Next.js
-      </h1>
+    <main className="max-w-2xl py-8 px-4 mx-auto">
+      <ul className="grid grid-cols-4 gap-3">
+        {showList.map((show) => (
+          <li key={show.id}>
+            <Link href={`/${show.id}`}>
+              <img
+                className="rounded-lg"
+                src={show.image?.medium}
+                alt={show.name}
+              />
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }
