@@ -1,5 +1,12 @@
 import { Show } from "@/types";
+import { Metadata } from "next";
 import Link from "next/link";
+
+// Static metadata
+export const metadata: Metadata = {
+  title: "TV Shows",
+  description: "List of tv shows",
+};
 
 export default async function Home() {
   const shows: Show[] = await fetch(

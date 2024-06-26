@@ -1,10 +1,37 @@
 import { Show } from "@/types";
+import { cache } from "react";
 
 type Params = {
   params: {
     id: string;
   };
 };
+
+async function getMove() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("move");
+    }, 1000);
+  });
+}
+
+const getMovieCached = cache(async () => {
+  console.log(123);
+  return getMove();
+});
+
+// Dynamic metadata
+export async function generateMetadata({ params }: Params) {
+  const show: Show = await fetch(
+    `https://api.tvmaze.com/shows/${params.id}`
+  ).then((res) => res.json());
+
+  return {
+    title: show.name,
+    description:
+      show.summary.replace(/<[^>]*>?/gm, "").substring(0, 200) + "...",
+  };
+}
 
 export default async function Page({ params }: Params) {
   const show: Show = await fetch(
