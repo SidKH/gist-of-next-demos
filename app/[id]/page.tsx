@@ -15,11 +15,6 @@ async function getMove() {
   });
 }
 
-const getMovieCached = cache(async () => {
-  console.log(123);
-  return getMove();
-});
-
 // Dynamic metadata
 export async function generateMetadata({ params }: Params) {
   const show: Show = await fetch(
