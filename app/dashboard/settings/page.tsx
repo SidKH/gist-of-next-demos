@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Settings",
+  description: "Settings description",
+};
+
 export default function Page() {
   return (
     <main className="flex min-h-screen justify-center items-center">
