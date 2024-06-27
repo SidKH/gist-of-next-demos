@@ -5,8 +5,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My app",
-  description: "Main description",
+  title: {
+    template: "%s | Acme",
+    default: "Acme",
+  },
 };
 
 export default function RootLayout({
