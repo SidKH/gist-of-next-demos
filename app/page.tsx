@@ -10,7 +10,7 @@ export default function Home() {
           </p>
         );
       })}
-      <Link className="underline text-blue-600" href="/show">
+      <Link className="underline text-blue-600" prefetch={false} href="/show">
         Link
       </Link>
     </div>
