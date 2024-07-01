@@ -10,8 +10,11 @@ export default async function Show({ params }: { params: { id: string } }) {
   await sleep(1000);
 
   return (
-    <div className="flex min-h-screen justify-center items-center">
-      <img className="rounded-lg object-cover" src={show.image.medium} />
+    <div className="flex min-h-screen justify-center items-center flex-col gap-3">
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        {show.name}
+      </h2>
+      <p className="leading-7">Rating: {show.rating.average}</p>
     </div>
   );
 }
