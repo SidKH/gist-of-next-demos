@@ -1,13 +1,9 @@
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+export const dynamic = "force-dynamic";
 
-export default async function Show({ params }: { params: { id: string } }) {
-  const show = await fetch(`https://api.tvmaze.com/shows/${params.id}`).then(
-    (res) => res.json()
+export default async function Show() {
+  const show = await fetch(`https://api.tvmaze.com/shows/1`).then((res) =>
+    res.json()
   );
-
-  await sleep(1000);
 
   return (
     <div className="flex min-h-screen justify-center items-center flex-col gap-3">
