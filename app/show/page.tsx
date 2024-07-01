@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 export default async function Show() {
   const show = await fetch(`https://api.tvmaze.com/shows/1`).then((res) =>
     res.json()
