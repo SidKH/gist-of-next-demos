@@ -1,9 +1,7 @@
-export const dynamic = "force-dynamic";
-
 export default async function Show() {
-  const show = await fetch(`https://api.tvmaze.com/shows/1`).then((res) =>
-    res.json()
-  );
+  const show = await fetch(`https://api.tvmaze.com/shows/1`, {
+    cache: "no-store",
+  }).then((res) => res.json());
 
   return (
     <div className="flex min-h-screen justify-center items-center flex-col gap-3">
