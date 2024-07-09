@@ -31,7 +31,7 @@ const multiBar = new MultiBar(
 export function fakeFetch({ name, time }: { name: string; time: number }) {
   // Each call to fakeFetch creates a new progress bar in the MultiBar
   // Include the name in the progress bar by setting it as a custom payload
-  const progressBar = multiBar.create(100, 0, { name, size: time / 100 });
+  const progressBar = multiBar.create(100, 0, { name, size: time / 50 });
 
   return new Promise((resolve) => {
     let progress = 0;
