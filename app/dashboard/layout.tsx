@@ -32,7 +32,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </li>
         </ul>
       </nav>
-      <div className="flex justify-center items-center flex-1">{children}</div>
+      <div className="flex justify-center pt-48 flex-1">{children}</div>
     </div>
   );
 }
