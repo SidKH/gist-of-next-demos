@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen justify-center items-center">
+    <main className="flex h-full justify-center items-center">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Next.js
+        Home
       </h1>
     </main>
   );
