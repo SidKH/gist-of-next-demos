@@ -1,4 +1,14 @@
-import Link from "next/link";
+import { NavLink, NavLinkProps } from "@/components/nav-link";
+
+function DashboardNavLink(props: NavLinkProps) {
+  return (
+    <NavLink
+      className="hover:text-foreground"
+      activeClassName="text-foreground underline"
+      {...props}
+    />
+  );
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -6,13 +16,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="w-40 p-4 border-r">
         <ul className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground">
           <li>
-            <Link href="/dashboard/settings">Settings</Link>
+            <DashboardNavLink href="/dashboard/settings">
+              Settings
+            </DashboardNavLink>
           </li>
           <li>
-            <Link href="/dashboard/analytics">Analytics</Link>
+            <DashboardNavLink href="/dashboard/analytics">
+              Analytics
+            </DashboardNavLink>
           </li>
           <li>
-            <Link href="/dashboard/profile">Profile</Link>
+            <DashboardNavLink href="/dashboard/profile">
+              Profile
+            </DashboardNavLink>
           </li>
         </ul>
       </nav>
