@@ -28,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col h-screen w-screen`}>
+      <body
+        className={`${inter.className} flex flex-col h-screen w-screen`}
+      >
         <nav className="flex p-4 items-center border-b text-sm">
           <h1 className="font-bold mr-8">
             <Link href="/">ACME</Link>
@@ -41,7 +43,10 @@ export default function RootLayout({
               <MainNavLink href="/about">About</MainNavLink>
             </li>
             <li>
-              <MainNavLink startsWith="/dashboard" href="/dashboard/settings">
+              <MainNavLink
+                startsWith="/dashboard"
+                href="/dashboard/settings"
+              >
                 Dashboard
               </MainNavLink>
             </li>
