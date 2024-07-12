@@ -18,7 +18,10 @@ export function NavLink({
     : pathname === props.href;
 
   return (
-    <Link className={cn(className, isActive && activeClassName)} {...props} />
+    <Link
+      className={cn(className, isActive && activeClassName)}
+      {...props}
+    />
   );
 }
 
