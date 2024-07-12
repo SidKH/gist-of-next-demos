@@ -44,7 +44,7 @@ export default function RootLayout({
             </li>
             <li>
               <MainNavLink
-                startsWith="/dashboard"
+                match="^/dashboard"
                 href="/dashboard/settings"
               >
                 Dashboard

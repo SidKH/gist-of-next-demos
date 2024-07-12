@@ -8,13 +8,13 @@ import { HTMLProps } from "react";
 export function NavLink({
   className,
   activeClassName,
-  startsWith,
+  match,
   ...props
 }: NavLinkProps) {
   const pathname = usePathname();
 
-  const isActive = startsWith
-    ? pathname.startsWith(startsWith)
+  const isActive = match
+    ? pathname.match(match)
     : pathname === props.href;
 
   return (
@@ -27,6 +27,6 @@ export function NavLink({
 
 export type NavLinkProps = {
   activeClassName?: string;
-  startsWith?: string;
+  match?: string;
 } & LinkProps &
   HTMLProps<HTMLAnchorElement>;
