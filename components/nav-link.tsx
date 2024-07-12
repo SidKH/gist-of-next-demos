@@ -5,12 +5,6 @@ import Link, { LinkProps } from "next/link";
 import { usePathname } from "next/navigation";
 import { HTMLProps } from "react";
 
-export type NavLinkProps = {
-  activeClassName?: string;
-  startsWith?: string;
-} & LinkProps &
-  HTMLProps<HTMLAnchorElement>;
-
 export function NavLink({
   className,
   activeClassName,
@@ -27,3 +21,9 @@ export function NavLink({
     <Link className={cn(className, isActive && activeClassName)} {...props} />
   );
 }
+
+export type NavLinkProps = {
+  activeClassName?: string;
+  startsWith?: string;
+} & LinkProps &
+  HTMLProps<HTMLAnchorElement>;
