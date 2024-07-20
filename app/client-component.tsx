@@ -1,7 +1,7 @@
 "use client";
 
 import { redirect, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { startTransition, useEffect } from "react";
 
 export function ClinetComponent() {
   const router = useRouter();
@@ -9,7 +9,7 @@ export function ClinetComponent() {
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "r" || event.key === "R") {
-        router.push("/dashboard");
+        startTransition(() => redirect("/dashboard"));
       }
     };
     window.addEventListener("keydown", handleKeyPress);
