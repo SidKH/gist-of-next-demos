@@ -49,7 +49,6 @@ export default async function Image({ params }: { params: { id: string } }) {
           <h2
             style={{
               fontSize: 64,
-              fontWeight: "bold",
             }}
           >
             ACME co.
