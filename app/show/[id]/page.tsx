@@ -1,3 +1,4 @@
+import { Show } from "@/lib/definitions";
 import Image from "next/image";
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -25,13 +26,3 @@ export default async function Page({ params }: { params: { id: string } }) {
     </div>
   );
 }
-
-type Show = {
-  id: number;
-  name: string;
-  summary: string;
-  image: {
-    medium: string;
-    original: string;
-  };
-};
