@@ -7,7 +7,7 @@ export default async function Page({ params }: { params: { id: string } }) {
   ).then((res) => res.json());
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center px-8 max-w-2xl mx-auto">
+    <div className="w-screen mt-20 flex justify-center items-center px-8 max-w-2xl mx-auto">
       <div className="flex gap-6 items-start">
         <Image
           className="shrink-0 rounded-lg shadow-lg"
