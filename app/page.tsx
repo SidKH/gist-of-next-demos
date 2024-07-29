@@ -25,7 +25,9 @@ export default function Page() {
 }
 
 function Tab1() {
-  return <p className="text-3xl font-bold mt-40 text-center">Tab 1</p>;
+  return (
+    <p className="text-3xl font-bold mt-40 text-center">Tab 1</p>
+  );
 }
 
 function SlowComponent() {
@@ -47,7 +49,9 @@ function Tab2() {
 }
 
 function Tab3() {
-  return <p className="text-3xl font-bold mt-40 text-center">Tab 3</p>;
+  return (
+    <p className="text-3xl font-bold mt-40 text-center">Tab 3</p>
+  );
 }
 
 function TabButton({
@@ -62,7 +66,10 @@ function TabButton({
   const [isPending, startTransition] = useTransition();
   return (
     <button
-      className={cn(isActive && "text-pink-500", isPending && "opacity-50")}
+      className={cn(
+        isActive && "text-pink-500",
+        isPending && "opacity-50"
+      )}
       onClick={() => {
         startTransition(() => {
           onClick();
