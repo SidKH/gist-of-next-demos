@@ -67,6 +67,7 @@ function TabButton({
   return (
     <button
       className={cn(
+        "active:outline px-2 rounded-md outline-offset-2 outline-stone-300",
         isActive && "text-pink-500",
         isPending && "opacity-50"
       )}
