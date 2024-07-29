@@ -35,7 +35,7 @@ function SlowComponent() {
 }
 
 function Tab2() {
-  let items = [];
+  const items = [];
   for (let i = 0; i < 100; i++) {
     items.push(<SlowComponent key={i} />);
   }
