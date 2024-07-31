@@ -1,11 +1,12 @@
 "use client";
 
-import { memo, useState } from "react";
+import { memo, useDeferredValue, useState } from "react";
 import { exampleNames } from "./example-names";
 import Avatar from "boring-avatars";
 
 export default function Home() {
   const [color, setColor] = useState("#92A1C6");
+  const deferredColor = useDeferredValue(color);
   return (
     <main className="flex min-h-screen justify-center items-center flex-col p-8 gap-8">
       <input
@@ -13,7 +14,7 @@ export default function Home() {
         value={color}
         onChange={(e) => setColor(e.target.value)}
       />
-      <Avatars color={color} />
+      <Avatars color={deferredColor} />
     </main>
   );
 }
