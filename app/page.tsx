@@ -33,7 +33,7 @@ function Tab1() {
 function SlowComponent() {
   let startTime = performance.now();
   while (performance.now() - startTime < 10) {}
-  return <li className="item">Slow component (10ms)</li>;
+  return <li>Slow component (10ms)</li>;
 }
 
 function Tab2() {
