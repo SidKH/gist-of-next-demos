@@ -12,7 +12,7 @@ function subscribe(callback: () => void) {
 }
 
 function getSnapshot() {
-  return navigator.onLine;
+  return window.navigator.onLine;
 }
 
 export default function Home() {
