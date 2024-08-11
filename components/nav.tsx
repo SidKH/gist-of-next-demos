@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Nav() {
   return (
     <nav>
-      <ul>
+      <ul className="flex gap-4 text-sm circle">
         <li>
           <Link className="text-blue-500 underline" href="/route-pages-1">
             Pages Router 1
