@@ -1,9 +1,30 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen justify-center items-center">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Next.js
-      </h1>
+    <main className="flex h-[50vh] justify-center items-center bg-stone-100">
+      <div
+        className="bg-white border shadow-md"
+        style={{
+          position: "relative",
+          width: 400,
+          height: 400,
+          overflow: "auto",
+          resize: "both",
+        }}
+      >
+        <Image
+          src="/sam.jpg"
+          alt="..."
+          width={1290}
+          height={1411}
+          style={{
+            objectFit: "contain",
+            width: "100%",
+            height: "100%",
+          }}
+        />
+      </div>
     </main>
   );
 }
