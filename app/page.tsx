@@ -1,9 +1,20 @@
+import { Suspense } from "react";
+
+async function MyComponent() {
+  await sleep(2000);
+  return <h1>My Component</h1>;
+}
+
 export default function Home() {
   return (
     <main className="flex min-h-screen justify-center items-center">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Next.js
-      </h1>
+      <Suspense fallback="Loading...">
+        <MyComponent />
+      </Suspense>
     </main>
   );
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
