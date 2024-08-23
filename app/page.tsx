@@ -1,3 +1,4 @@
+import { Loader2 } from "lucide-react";
 import { Suspense } from "react";
 
 async function MyComponent() {
@@ -7,14 +8,16 @@ async function MyComponent() {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen justify-center items-center">
-      <Suspense fallback="Loading...">
+    <main className="p-24 flex min-h-[40vh] text-center justify-center items-center">
+      <Suspense
+        fallback={<Loader2 className="h-8 w-8 animate-spin" />}
+      >
         <MyComponent />
       </Suspense>
     </main>
   );
 }
 
-function sleep(ms) {
+function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
