@@ -4,9 +4,12 @@ import { useEffect } from "react";
 import confetti from "canvas-confetti";
 import { useSearchParams } from "next/navigation";
 
-export default function Page() {
-  const searchParams = useSearchParams();
-  const message = searchParams.get("message");
+export default function Page({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const message = searchParams.message;
 
   useEffect(() => {
     confetti({
