@@ -1,5 +1,4 @@
 "use client";
-
 import { myAction } from "./actions";
 
 export function MyForm() {
@@ -8,23 +7,16 @@ export function MyForm() {
       <textarea
         required
         onKeyDown={(e) => {
-          if (
-            (e.ctrlKey || e.metaKey) &&
-            (e.key === "Enter" || e.key === "NumpadEnter")
-          ) {
+          if (e.metaKey && e.key === "Enter") {
             e.preventDefault();
-            e.currentTarget.form?.requestSubmit();
+            e.currentTarget.form?.submit();
           }
         }}
+        placeholder="Type your message here..."
         name="message"
-        className="w-full min-h-[100px] p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black resize-none"
+        className="w-full p-2 min-h-[100px] border rounded-md focus:outline-none focus:ring-2 focus:ring-black resize-none"
       />
-      <button
-        type="submit"
-        className="mt-2 px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 text-sm"
-      >
-        Submit
-      </button>
+      <span className="text-sm">Press ⌘+Enter to submit</span>
     </form>
   );
 }
