@@ -1,9 +1,9 @@
-export default function Home() {
+import { MyForm } from "./my-form";
+
+export default function Page() {
   return (
-    <main className="flex min-h-screen justify-center items-center">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Next.js
-      </h1>
-    </main>
+    <div className="flex justify-center items-center h-[50vh]">
+      <MyForm />
+    </div>
   );
 }
