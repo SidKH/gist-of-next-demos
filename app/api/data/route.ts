@@ -1,4 +1,5 @@
 export async function GET() {
+  console.log("Fetching data (1s)");
   await sleep(1000);
   return Response.json(Math.random());
 }
