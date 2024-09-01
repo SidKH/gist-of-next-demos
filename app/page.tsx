@@ -4,13 +4,13 @@ import { useState } from "react";
 import { fetchServerAction } from "./actions";
 
 export default function Home() {
-  const [data, setData] = useState<number[]>([]);
+  const [data, setData] = useState<number[] | null>(null);
 
   function fetchRouteHandler() {
     return fetch("/api/data").then((res) => res.json());
   }
 
-  if (data.length === 0) {
+  if (data === null) {
     return (
       <div className="h-screen flex justify-center items-center">
         <button
