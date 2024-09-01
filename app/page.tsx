@@ -17,9 +17,9 @@ export default function Home() {
           className="bg-stone-950 text-white text-sm px-4 py-2 rounded-md"
           onClick={async () => {
             const data = await Promise.all([
-              fetchRouteHandler(),
-              fetchRouteHandler(),
-              fetchRouteHandler(),
+              fetchServerAction(),
+              fetchServerAction(),
+              fetchServerAction(),
             ]);
             setData(data);
           }}
