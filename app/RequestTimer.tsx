@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, use, useEffect, useState } from "react";
 
 export function RequestTimer({
   dataPromise,
@@ -19,9 +19,16 @@ export function RequestTimer({
   return (
     <div className="text-center">
       <Timer stop={!!data} />
-      <p className="mt-4">{!data ? "Loading..." : data}</p>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Data dataPromise={dataPromise} />
+      </Suspense>
     </div>
   );
+}
+
+function Data({ dataPromise }: { dataPromise: Promise<string> }) {
+  const data = use(dataPromise);
+  return <p>{data}</p>;
 }
 
 function Timer({ stop }: { stop: boolean }) {
