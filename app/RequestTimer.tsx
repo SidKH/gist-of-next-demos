@@ -7,6 +7,8 @@ export function RequestTimer({
 }: {
   dataPromise: Promise<string>;
 }) {
+  console.log("render");
+
   const [data, setData] = useState<string | null>(null);
 
   useEffect(() => {
