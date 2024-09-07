@@ -1,9 +1,12 @@
-export default function Home() {
+import { getData } from "@/lib/data";
+import { RequestTimer } from "./RequestTimer";
+
+export default async function Home() {
+  const dataPromise = getData();
+
   return (
     <main className="flex min-h-screen justify-center items-center">
-      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-        Next.js
-      </h1>
+      <RequestTimer dataPromise={dataPromise} />
     </main>
   );
 }
