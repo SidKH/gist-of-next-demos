@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getData } from "@/lib/data";
 import { RequestTimer } from "./RequestTimer";
 
