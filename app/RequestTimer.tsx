@@ -10,7 +10,6 @@ export function RequestTimer({
   const [data, setData] = useState<string | null>(null);
 
   useEffect(() => {
-    console.log("data effect");
     dataPromise.then((data) => {
       setData(data);
     });
@@ -28,7 +27,6 @@ function Timer({ stop }: { stop: boolean }) {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
-    console.log("timer effect");
     if (stop) return;
     const start = Date.now();
     const interval = setInterval(() => {
