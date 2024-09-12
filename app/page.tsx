@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { Skeleton } from "@/components/ui/skeleton";
 import { getPrimaryData, getSecondaryData, getUser } from "@/lib/data";
 import { Suspense } from "react";
