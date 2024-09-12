@@ -41,7 +41,7 @@ async function SecondaryData({ promise }: { promise: Promise<string> }) {
 
 function Box({ children }: { children: React.ReactNode }) {
   return (
-    <div className="p-4 rounded-md border w-64 flex justify-center items-center h-48">
+    <div className="p-4 rounded-md border w-64 flex justify-center items-center h-24">
       {children}
     </div>
   );
