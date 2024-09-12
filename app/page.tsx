@@ -16,14 +16,10 @@ export default async function Home() {
         <p className="text-sm text-muted-foreground">{user.email}</p>
       </header>
       <Box>
-        <Suspense fallback={<Skeleton className="h-6 w-24" />}>
-          <PrimaryData promise={primaryData} />
-        </Suspense>
+        <PrimaryData promise={primaryData} />
       </Box>
       <Box>
-        <Suspense fallback={<Skeleton className="h-6 w-24" />}>
-          <SecondaryData promise={secondaryData} />
-        </Suspense>
+        <SecondaryData promise={secondaryData} />
       </Box>
     </main>
   );
