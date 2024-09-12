@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen justify-center items-center flex-col gap-8">
       <header className="text-center">
-        <h1 className="text-3xl font-bold leading-tight">{user.name}</h1>
+        <h1 className="text-3xl font-bold leading-tight">{user.name}.</h1>
         <p className="text-sm text-muted-foreground">{user.email}</p>
       </header>
       <Box>
