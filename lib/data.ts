@@ -7,14 +7,14 @@ export async function getUser() {
   };
 }
 
-export async function getPrimaryData(id: string) {
+export async function getPrimaryContent(id: string) {
   await sleep(1000);
-  return "Primary Data";
+  return "Primary content";
 }
 
-export async function getSecondaryData(id: string) {
+export async function getSecondaryContent(id: string) {
   await sleep(2000);
-  return "Secondary Data";
+  return "Secondary content";
 }
 
 function sleep(ms: number) {
