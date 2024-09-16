@@ -4,9 +4,6 @@ import { useState } from "react";
 import { getRecipe } from "./actions";
 import { Button } from "@/components/ui/button";
 
-// Allow streaming responses up to 30 seconds
-export const maxDuration = 30;
-
 export default function Home() {
   const [generation, setGeneration] = useState("");
 
@@ -15,7 +12,6 @@ export default function Home() {
       <Button
         onClick={async () => {
           const recipe = await getRecipe("Lasagna");
-
           setGeneration(JSON.stringify(recipe, null, 2));
         }}
       >
