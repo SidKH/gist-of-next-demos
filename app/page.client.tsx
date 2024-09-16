@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { getRecipe } from "./actions";
 import { Button } from "@/components/ui/button";
