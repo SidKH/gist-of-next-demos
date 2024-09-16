@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="py-6 flex flex-col gap-6 justify-center items-center">
-      <Badge variant="outline">Structured data + Component</Badge>
+      <Badge variant="outline">Text</Badge>
       <Button
         onClick={async () => {
           const recipe = await getRecipe("Lasagna");
@@ -20,10 +20,10 @@ export default function Home() {
       >
         Generate Lasagna Recipe
       </Button>
-      {/*<pre className="w-[500px] h-96 overflow-y-auto bg-stone-100 rounded-lg p-4">
-        {generation}
-      </pre>*/}
-      {generation && <Recepie recipe={generation} />}
+
+      <div className="min-h-96 bg-stone-100 rounded-lg max-w-md w-screen">
+        {generation && <Recepie recipe={generation} />}
+      </div>
     </div>
   );
 }

@@ -14,7 +14,7 @@ export function Recepie({ recipe }: { recipe: Recipe }) {
   };
 
   return (
-    <div className="max-w-md border divide-y shadow rounded-md flex flex-col">
+    <div className="bg-white max-w-md border divide-y shadow rounded-md flex flex-col">
       <h1 className="text-2xl font-bold p-4">{recipe.name}</h1>
       <div className="p-4">
         <p className="font-bold mb-2">Ingredients:</p>
