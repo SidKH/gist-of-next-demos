@@ -19,8 +19,11 @@ export function Recepie({ recipe }: { recipe: Recipe }) {
       <div className="p-4">
         <p className="font-bold mb-2">Ingredients:</p>
         <ul className="flex flex-wrap gap-1 text-xs text-muted-foreground">
-          {recipe.ingredients.map((ingredient) => (
-            <li key={ingredient.name}>{ingredient.name}</li>
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={ingredient.name}>
+              {ingredient.name}
+              {index < recipe.ingredients.length - 1 && ", "}
+            </li>
           ))}
         </ul>
       </div>
