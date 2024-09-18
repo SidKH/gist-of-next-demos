@@ -13,11 +13,11 @@ type UserPromise = Promise<User | null>;
 const UserContext = createContext<UserPromise | null>(null);
 
 export function useUser() {
-  let context = use(UserContext);
-  if (!context) {
+  let userPromise = use(UserContext);
+  if (!userPromise) {
     throw new Error("useUser must be used within a UserProvider");
   }
-  const user = use(context);
+  const user = use(userPromise);
   return user;
 }
 
