@@ -1,8 +1,7 @@
 "use client";
-
 import { Badge } from "@/components/ui/badge";
-import { Suspense } from "react";
 import DeeplyNestedClientComponent from "./client-component-c";
+import { Suspense } from "react";
 
 export default function ClientComponent() {
   return (
