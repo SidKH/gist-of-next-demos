@@ -16,11 +16,16 @@ export default function Search() {
         onSubmit={(e) => {
           e.preventDefault();
           startTransition(() => {
-            router.push(`?q=${e.currentTarget.search.value}`);
+            router.push(`?q=${e.currentTarget.q.value}`);
           });
         }}
       >
-        <Input name="search" type="search" />
+        <Input
+          autoComplete="off"
+          placeholder="Search..."
+          name="q"
+          type="search"
+        />
         <Button disabled={isPending}>
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Search

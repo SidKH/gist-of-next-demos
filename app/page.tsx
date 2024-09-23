@@ -11,7 +11,7 @@ export default async function Home({
     { cache: "no-store" }
   ).then((res) => res.json());
 
-  await sleep(500);
+  await sleep(800);
 
   return (
     <main className="flex min-h-screen justify-center items-center">
