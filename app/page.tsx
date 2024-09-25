@@ -1,11 +1,5 @@
-"use client";
-
-import { useEffect } from "react";
-
 export default function Home() {
-  useEffect(() => {
-    console.log("Home page mounted");
-  }, []);
+  console.log("server log");
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
