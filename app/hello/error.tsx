@@ -16,7 +16,10 @@ export default function Error({ reset }: { reset: () => void }) {
       <Button
         disabled={isPending}
         onClick={() => {
-          reset();
+          startTransition(() => {
+            router.refresh();
+            reset();
+          });
         }}
       >
         {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
