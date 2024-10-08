@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Container, RefreshButton } from "./page.client";
 
 export default function Home() {
