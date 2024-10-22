@@ -1,5 +1,5 @@
-import Form from "next/form";
 import { Suspense } from "react";
+import Form from "next/form";
 
 export default async function Home({
   searchParams,
@@ -12,13 +12,17 @@ export default async function Home({
 
   return (
     <main className="p-8 flex flex-col gap-4">
-      <Form className="flex gap-2" action="/">
+      <Form className="flex gap-2" action="/results/shirts">
         <input
           className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
           name="query"
           type="search"
           defaultValue={searchQuery}
         />
+        <select name="sort">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+        </select>
         <button
           className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
           type="submit"
