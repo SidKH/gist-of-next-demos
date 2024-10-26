@@ -8,3 +8,9 @@ export async function RandomNumber() {
     </p>
   );
 }
+
+export function LoadingFallback() {
+  return (
+    <div className="h-[48px] flex justify-center items-center">Loading...</div>
+  );
+}

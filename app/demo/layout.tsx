@@ -1,4 +1,4 @@
-import { RandomNumber } from "@/components/random-number";
+import { LoadingFallback, RandomNumber } from "@/components/random-number";
 import { Suspense } from "react";
 
 export default async function Layout({
@@ -12,13 +12,7 @@ export default async function Layout({
         <p className="font-mono text-sm p-2 border-b text-center w-full">
           app/demo/layout.tsx
         </p>
-        <Suspense
-          fallback={
-            <div className="h-[48px] flex justify-center items-center">
-              Loading...
-            </div>
-          }
-        >
+        <Suspense fallback={<LoadingFallback />}>
           <RandomNumber />
         </Suspense>
         <div className="flex-1 flex justify-center items-center">
