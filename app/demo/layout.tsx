@@ -8,7 +8,7 @@ export default async function Layout({
 }) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
-      <div className="w-[400px] h-[400px] bg-stone-50 border rounded-lg flex flex-col justify-center items-center gap-6 pb-6">
+      <div className="w-[400px] h-[360px] bg-stone-50 border rounded-lg flex flex-col justify-center items-center gap-6 pb-6">
         <p className="font-mono text-sm p-2 border-b text-center w-full">
           app/demo/layout.tsx
         </p>

@@ -3,7 +3,7 @@ import { Suspense } from "react";
 
 export default async function Home() {
   return (
-    <main className="bg-white w-80 h-60 border rounded-lg flex flex-col">
+    <main className="bg-white w-80 h-52 border rounded-lg flex flex-col">
       <p className="font-mono text-sm p-2 border-b text-center">
         app/demo/page.tsx
       </p>
