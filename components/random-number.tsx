@@ -1,4 +1,5 @@
 export async function RandomNumber() {
+  await new Promise((resolve) => setTimeout(resolve, 300));
   const number = await fetch(
     `http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&r=${performance.now()}`
   ).then((res) => res.json());
@@ -11,6 +12,6 @@ export async function RandomNumber() {
 
 export function LoadingFallback() {
   return (
-    <div className="h-[48px] flex justify-center items-center">Loading...</div>
+    <div className="h-[40px] flex justify-center items-center">Loading...</div>
   );
 }
