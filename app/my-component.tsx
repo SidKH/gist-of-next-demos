@@ -1,7 +1,7 @@
-import { getData } from "@/lib/data";
+"use client";
 
-export async function MyComponent() {
-  const data = await getData();
+import { getTheAnswer } from "@/lib/data";
 
-  return <h2>{data}</h2>;
+export function MyComponent() {
+  return <h2>{getTheAnswer()}</h2>;
 }
