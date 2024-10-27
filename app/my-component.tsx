@@ -1,5 +1,3 @@
-"use client";
-
 import { getTheAnswer } from "@/lib/data";
 
 export function MyComponent() {
