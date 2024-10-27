@@ -1,5 +1,5 @@
-import { LoadingFallback, RandomNumber } from "@/components/random-number";
-import { Suspense } from "react";
+"use cache";
+import { RandomNumber } from "@/components/random-number";
 
 export default async function Home() {
   return (
@@ -8,9 +8,7 @@ export default async function Home() {
         app/demo/page.tsx
       </p>
       <div className="flex-1 flex justify-center items-center">
-        <Suspense fallback={<LoadingFallback />}>
-          <RandomNumber />
-        </Suspense>
+        <RandomNumber />
       </div>
     </main>
   );
