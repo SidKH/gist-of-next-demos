@@ -8,9 +8,12 @@ export async function Parent({ children }: { children: React.ReactNode }) {
     .then((data) => data[0]);
 
   return (
-    <div>
-      <h2 className="font-bold">Parent</h2>
-      <p>Random number: {randomNumber}</p>
+    <div className="p-8 border rounded-lg bg-stone-50">
+      <h2 className="font-bold">Parent (cached)</h2>
+      <p>
+        Random number:{" "}
+        <strong className="w-4 inline-flex">{randomNumber}</strong>
+      </p>
       {children}
     </div>
   );

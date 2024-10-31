@@ -6,9 +6,12 @@ export async function Child() {
     .then((data) => data[0]);
 
   return (
-    <div>
+    <div className="p-8 border rounded-lg mt-8 bg-white">
       <h2 className="font-bold">Child</h2>
-      <p>Random number: {randomNumber}</p>
+      <p>
+        Random number:{" "}
+        <strong className="w-4 inline-flex">{randomNumber}</strong>
+      </p>
     </div>
   );
 }
