@@ -25,7 +25,6 @@ async function PostViews({ id }: { id: number }) {
 }
 
 async function Post({ id }: { id: number }) {
-  "use cache";
   const post = await prisma.post.findUnique({ where: { id } });
 
   if (!post) {
