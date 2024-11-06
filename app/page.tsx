@@ -1,11 +1,14 @@
 import { prisma } from "@/lib/db";
+import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
 export default async function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <Post id={1} />
-      <Suspense fallback="Loading...">
+    <main className="max-w-xl mx-auto p-8 flex flex-col gap-4">
+      <Suspense>
+        <Post id={1} />
+      </Suspense>
+      <Suspense>
         <PostViews id={1} />
       </Suspense>
     </main>
@@ -14,11 +17,27 @@ export default async function Home() {
 
 async function PostViews({ id }: { id: number }) {
   const totalViews = await prisma.postView.count({ where: { postId: id } });
-  return <div>Viewed {totalViews} times</div>;
+  return (
+    <div className="text-sm text-muted-foreground animate-in fade-in-0 duration-300">
+      Viewed {totalViews} times
+    </div>
+  );
 }
 
 async function Post({ id }: { id: number }) {
   "use cache";
   const post = await prisma.post.findUnique({ where: { id } });
-  return <pre>{JSON.stringify(post, null, 2)}</pre>;
+
+  if (!post) {
+    notFound();
+  }
+
+  return (
+    <div>
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-3">
+        {post.title}
+      </h1>
+      <p className="text-lg">{post.content}</p>
+    </div>
+  );
 }
