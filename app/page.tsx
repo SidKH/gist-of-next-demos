@@ -5,9 +5,7 @@ import { Suspense } from "react";
 export default async function Home() {
   return (
     <main className="max-w-xl mx-auto p-8 flex flex-col gap-4">
-      <Suspense>
-        <Post id={1} />
-      </Suspense>
+      <Post id={1} />
       <Suspense>
         <PostViews id={1} />
       </Suspense>
@@ -25,6 +23,7 @@ async function PostViews({ id }: { id: number }) {
 }
 
 async function Post({ id }: { id: number }) {
+  "use cache";
   const post = await prisma.post.findUnique({ where: { id } });
 
   if (!post) {
