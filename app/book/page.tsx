@@ -20,9 +20,6 @@ export default async function Page() {
             {book.name}
           </h1>
           <p className="mb-2">{book.description}</p>
-          <Suspense fallback={<Skeleton className="mt-4 w-32 h-4" />}>
-            <Rating />
-          </Suspense>
         </div>
       </div>
     </main>
