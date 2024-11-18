@@ -8,7 +8,13 @@ export default async function Page() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="max-w-xl flex w-full gap-6">
-        <Image src={book.image} alt={book.name} width={190} height={300} />
+        <Image
+          className="w-[190px]"
+          src={book.image}
+          alt={book.name}
+          width={190}
+          height={300}
+        />
         <div>
           <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-2">
             {book.name}
