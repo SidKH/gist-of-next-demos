@@ -12,7 +12,7 @@ export default async function Page() {
           className="flex-shrink-0"
           src={book.image}
           alt={book.name}
-          width={190}
+          width={190.5}
           height={300}
         />
         <div>
