@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { Suspense } from "react";
 
 export default async function Home() {
