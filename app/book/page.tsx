@@ -3,6 +3,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { fetchBook, fetchRating } from "@/lib/data";
 import { Suspense } from "react";
 
+export const experimental_ppr = true;
+
 export default async function Page() {
   const book = await fetchBook();
   return (
@@ -30,7 +32,7 @@ export default async function Page() {
 }
 
 async function Rating() {
-  const rating = await fetchRating(); // uses cookies
+  const rating = await fetchRating(); // uses cookies()
   return (
     <div className="flex items-center gap-1 items-center">
       <span className="text-sm font-bold mr-2">{rating}</span>
