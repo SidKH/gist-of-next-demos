@@ -9,7 +9,7 @@ export default async function Page() {
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="max-w-xl flex w-full gap-6">
         <Image
-          className="w-[190px]"
+          className="flex-shrink-0"
           src={book.image}
           alt={book.name}
           width={190}
