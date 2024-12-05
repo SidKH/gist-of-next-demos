@@ -10,7 +10,7 @@ async function RandomNumber({ tagName }: { tagName: string }) {
   const randomNumber = await res.text();
   return (
     <div className="flex border shadow-md rounded-full px-8 py-4 w-80 justify-between items-center bg-white">
-      <p className="text-sm">{tagName}</p>
+      <p className="text-sm">tag: {tagName}</p>
       <p className="text-2xl font-bold">{randomNumber}</p>
     </div>
   );
