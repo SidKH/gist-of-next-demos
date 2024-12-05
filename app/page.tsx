@@ -1,9 +1,11 @@
+export const dynamic = "force-dynamic";
+
 import { revalidatePath, revalidateTag } from "next/cache";
 
 async function RandomNumber({ tagName }: { tagName: string }) {
   const res = await fetch(
     `https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=${tagName}`,
-    { next: { tags: [tagName] } }
+    { next: { tags: [tagName] }, cache: "force-cache" }
   );
   const randomNumber = await res.text();
   return (
