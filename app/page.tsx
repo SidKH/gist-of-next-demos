@@ -1,4 +1,4 @@
-import { ConfettiButton } from "./ConfettiButton";
+import { ConfettiButton } from "@/components/ConfettiButton";
 
 export default async function Home() {
   const { message: dogImage } = await fetch(
@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <ConfettiButton>
-        <img className="max-w-sm max-h-sm" src={dogImage} alt="dog" />
+        <img className="max-w-[240px] max-h-[240px]" src={dogImage} alt="dog" />
       </ConfettiButton>
     </main>
   );
