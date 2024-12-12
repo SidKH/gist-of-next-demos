@@ -3,7 +3,10 @@
 import { experimental_generateImage as generateImage } from "ai";
 import { openai } from "@ai-sdk/openai";
 
-export async function generateAIImage(state: any, formData: FormData) {
+export async function generateAIImage(
+  _previousState: string | null,
+  formData: FormData
+) {
   const prompt = formData.get("prompt") as string;
 
   const { image } = await generateImage({
