@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 export async function action() {
   "use server";
   const id = await primaryTask();
-  await backgroundTask(id);
+  backgroundTask(id);
   redirect("/success");
 }
 
