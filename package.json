@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
+    "@vercel/functions": "^1.5.2",
     "babel-plugin-react-compiler": "^19.0.0-beta-df7b47d-20241124",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
