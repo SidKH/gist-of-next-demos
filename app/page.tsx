@@ -6,7 +6,7 @@ export default function Home() {
   async function action() {
     "use server";
     const id = await primaryTask();
-    backgroundTask(id);
+    await backgroundTask(id);
     redirect("/success");
   }
 
