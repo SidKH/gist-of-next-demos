@@ -1,15 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { waitUntil } from "@vercel/functions";
-import { redirect } from "next/navigation";
+import { action } from "./actions";
 
 export default function Home() {
-  async function action() {
-    "use server";
-    const id = await primaryTask();
-    await backgroundTask(id);
-    redirect("/success");
-  }
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <form action={action}>
@@ -17,15 +9,4 @@ export default function Home() {
       </form>
     </main>
   );
-}
-
-async function primaryTask() {
-  await new Promise((resolve) => setTimeout(resolve, 300));
-  console.log("Primary task - 300ms");
-  return "string";
-}
-
-async function backgroundTask(param: string) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log("Background task - 1000ms");
 }
