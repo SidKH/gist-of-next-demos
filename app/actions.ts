@@ -1,9 +1,10 @@
+import { waitUntil } from "@vercel/functions";
 import { redirect } from "next/navigation";
 
 export async function action() {
   "use server";
   const id = await primaryTask();
-  backgroundTask(id);
+  waitUntil(backgroundTask(id));
   redirect("/success");
 }
 
