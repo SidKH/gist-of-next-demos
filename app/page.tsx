@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { after } from "next/server";
 
 export const dynamic = "force-dynamic";
 
@@ -7,7 +8,10 @@ export default async function Home() {
     .then((res) => res.json())
     .then((data) => data.message);
 
-  logPageViewTo3rdParty();
+  after(async () => {
+    // Execute after the component is rendered and sent to the user
+    await logPageViewTo3rdParty();
+  });
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
