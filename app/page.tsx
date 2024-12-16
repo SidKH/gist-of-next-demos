@@ -9,9 +9,8 @@ export default async function Home() {
     .then((data) => data.message);
 
   console.log("Render");
-  after(() => {
-    // Execute after component is rendered and sent to the user
-    logPageViewTo3rdParty();
+  after(async () => {
+    await logPageViewTo3rdParty();
   });
 
   return (
