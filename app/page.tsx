@@ -7,6 +7,8 @@ export default async function Home() {
     .then((res) => res.json())
     .then((data) => data.message);
 
+  await logPageViewTo3rdParty();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <h1 className="absolute top-5 w-full text-center">Random dog image</h1>
@@ -20,4 +22,12 @@ export default async function Home() {
       </div>
     </main>
   );
+}
+
+async function logPageViewTo3rdParty() {
+  // Simulate latency
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  // Test request with webhook.site
+  await fetch("https://webhook.site/47ed014e-4d2c-4b2c-95aa-d64791bcba83");
 }
