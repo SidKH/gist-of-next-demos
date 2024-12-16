@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const randomDog = await fetch("https://dog.ceo/api/breeds/image/random")
     .then((res) => res.json())
