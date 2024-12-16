@@ -8,8 +8,8 @@ export default async function Home() {
     .then((res) => res.json())
     .then((data) => data.message);
 
-  console.log("Render");
   after(async () => {
+    // Execute this after component is rendered and sent to the user
     await logPageViewTo3rdParty();
   });
 
@@ -31,5 +31,7 @@ export default async function Home() {
 async function logPageViewTo3rdParty() {
   // Simulate latency
   await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  // Test request with webhook.site
   await fetch("https://webhook.site/47ed014e-4d2c-4b2c-95aa-d64791bcba83");
 }
