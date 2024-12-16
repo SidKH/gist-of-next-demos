@@ -7,7 +7,7 @@ export default async function Home() {
     .then((res) => res.json())
     .then((data) => data.message);
 
-  await logPageViewTo3rdParty();
+  logPageViewTo3rdParty();
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
