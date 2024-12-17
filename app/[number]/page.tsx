@@ -1,10 +1,12 @@
+export const dynamic = "force-static";
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ number: string }>;
 }) {
   // Simulate latency
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await sleep(1000);
   const number = (await params).number;
 
   return (
@@ -12,4 +14,8 @@ export default async function Page({
       Page {number}
     </div>
   );
+}
+
+async function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
