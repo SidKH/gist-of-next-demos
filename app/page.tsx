@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { after } from "next/server";
+import { ChildComponent } from "./child-component";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,7 @@ export default async function Home() {
           alt="Dog"
         />
       </div>
+      <ChildComponent />
     </main>
   );
 }
