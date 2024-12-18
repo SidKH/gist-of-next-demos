@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 export const revalidate = 360;
 
 export default async function Page({
