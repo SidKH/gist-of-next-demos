@@ -64,6 +64,11 @@ export async function getItemsFromDb(): Promise<Item[]> {
   try {
     const db = await getDb();
     const items = await db.all("SELECT * FROM items");
+
+    if (items.length === 0) {
+      return initializeData();
+    }
+
     return items;
   } catch (error) {
     return initializeData();

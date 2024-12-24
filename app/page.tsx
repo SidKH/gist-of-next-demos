@@ -1,6 +1,8 @@
 import { getItemsFromDb } from "@/lib/data";
 import { ListItem } from "./list-item";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const items = await getItemsFromDb();
 
