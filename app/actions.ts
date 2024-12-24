@@ -3,8 +3,8 @@
 import { updateItemInDb } from "@/lib/data";
 
 type State = {
-  content: string;
   success?: boolean;
+  content: string;
 };
 
 export async function editItem(
@@ -13,6 +13,6 @@ export async function editItem(
 ): Promise<State> {
   const id = formData.get("id") as string;
   const content = formData.get("content") as string;
-  const item = await updateItemInDb(id, content);
-  return { content: item.content, success: true };
+  const updatedItem = await updateItemInDb(id, content);
+  return { success: true, content: updatedItem.content };
 }
