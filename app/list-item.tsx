@@ -28,7 +28,7 @@ export function ListItem({ item }: { item: Item }) {
             autoFocus
             type="text"
             name="content"
-            defaultValue={item.content}
+            defaultValue={state.content}
           />
           <Button type="submit">Save</Button>
         </form>
