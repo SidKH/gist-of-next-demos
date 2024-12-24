@@ -57,6 +57,8 @@ async function initializeData() {
 }
 
 export async function getItemsFromDb(): Promise<Item[]> {
+  console.log("Get All Items from DB");
+
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   try {
@@ -72,6 +74,7 @@ export async function updateItemInDb(
   id: string,
   content: string
 ): Promise<Item> {
+  console.log("Update Item in DB");
   try {
     const db = await getDb();
     await db.run("UPDATE items SET content = ? WHERE id = ?", [content, id]);
