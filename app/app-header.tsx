@@ -16,8 +16,8 @@ export async function AppHeader() {
 function MainMenu() {
   return (
     <div className="flex items-center gap-3 text-sm">
-      <Link href="/nav-link-1">Nav Link 1</Link>
-      <Link href="/nav-link-2">Nav Link 2</Link>
+      <Link href="/page-1">Page 1</Link>
+      <Link href="/page-2">Page 2</Link>
     </div>
   );
 }
