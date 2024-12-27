@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRightIcon } from "lucide-react";
+import Link from "next/link";
 
 export default async function Home() {
   return (
@@ -17,13 +18,13 @@ export default async function Home() {
         </p>
         <div className="flex items-center justify-center gap-x-6">
           <Button asChild>
-            <a href="/signup">Get Started Free</a>
+            <Link href="/dashboard">Get Started</Link>
           </Button>
           <Button variant="link" asChild>
-            <a href="/demo">
+            <Link href="/demo">
               Book a Demo
               <ArrowRightIcon className="w-4 h-4" />
-            </a>
+            </Link>
           </Button>
         </div>
       </div>

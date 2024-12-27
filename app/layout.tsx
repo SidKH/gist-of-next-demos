@@ -1,6 +1,6 @@
 import { SessionProvider } from "next-auth/react";
 import "./globals.css";
-import { MainMenu } from "./main-menu";
+import { AppHeader } from "./app-header";
 
 export default function RootLayout({
   children,
@@ -11,9 +11,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SessionProvider>
-          <header className="h-16 border-b flex items-center justify-end px-4">
-            <MainMenu />
-          </header>
+          <AppHeader />
           <main>{children}</main>
         </SessionProvider>
       </body>
