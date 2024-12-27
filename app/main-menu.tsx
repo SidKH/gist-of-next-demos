@@ -10,6 +10,7 @@ export function MainMenu() {
 }
 
 function UserProfile({ user }: { user: User }) {
+  if (!user.image) return null;
   return (
     <img
       src={user.image}
