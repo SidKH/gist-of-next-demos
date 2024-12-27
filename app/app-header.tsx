@@ -1,11 +1,9 @@
-"use client";
-
+import { auth } from "@/auth";
 import { User } from "next-auth";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 
-export function AppHeader() {
-  const { data: session } = useSession();
+export async function AppHeader() {
+  const session = await auth();
 
   return (
     <header className="flex items-center justify-between px-4 h-16 border-b">
@@ -32,7 +30,7 @@ function UserProfile({ user }: { user: User }) {
       alt="Profile picture"
       width={32}
       height={32}
-      className="rounded-full animate-in fade-in duration-400 cursor-pointer"
+      className="rounded-full cursor-pointer"
     />
   );
 }
