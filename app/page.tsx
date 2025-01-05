@@ -1,7 +1,9 @@
-export default function Home() {
+export default async function Home() {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      Home
+      <h1 className="text-4xl font-bold">Hello World</h1>
     </main>
   );
 }
