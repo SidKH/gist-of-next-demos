@@ -9,12 +9,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {children}
         <Script
           type="module"
-          strategy="beforeInteractive"
           src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
         />
-        {children}
       </body>
     </html>
   );
