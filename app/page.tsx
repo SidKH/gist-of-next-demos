@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { SWRConfig } from "swr";
 import { RandomDog } from "./RandomDog";
 import { getRandomDog } from "./data";
