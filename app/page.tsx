@@ -1,14 +1,17 @@
-import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
 import { getRandomDog } from "./data";
-import { getQueryClient } from "./get-query-client";
 import { RandomDog } from "./RandomDog";
 
-export default function Home() {
-  const queryClient = getQueryClient();
+export default async function Home() {
+  const queryClient = new QueryClient();
 
-  queryClient.prefetchQuery({
+  await queryClient.prefetchQuery({
     queryKey: ["randomDog"],
-    queryFn: getRandomDog, // No await, passing a promise
+    queryFn: getRandomDog,
   });
 
   return (
