@@ -1,13 +1,13 @@
 "use client";
 
 import useSWR from "swr";
-import { getRandomDog } from "./data";
+import { getRandomNumber } from "./data";
 import { Button } from "@/components/ui/button";
 
-export function RandomDog() {
+export function RandomNumber() {
   const { data, mutate, isValidating } = useSWR(
-    "randomDog",
-    getRandomDog,
+    "randomNumber",
+    getRandomNumber,
     {
       revalidateOnFocus: false,
       revalidateOnMount: false,
@@ -20,14 +20,10 @@ export function RandomDog() {
         {isValidating ? (
           <span>Loading...</span>
         ) : (
-          <img
-            className="max-w-full max-h-full"
-            src={data}
-            alt="Random Dog"
-          />
+          <span>Random Number: {data}</span>
         )}
       </div>
-      <Button onClick={() => mutate("randomDog")}>Another dog</Button>
+      <Button onClick={() => mutate()}>Another number</Button>
     </div>
   );
 }

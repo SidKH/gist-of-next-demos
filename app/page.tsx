@@ -2,7 +2,8 @@ export const dynamic = "force-dynamic";
 
 import { SWRConfig } from "swr";
 import { RandomDog } from "./RandomDog";
-import { getRandomDog } from "./data";
+import { getRandomDog, getRandomNumber } from "./data";
+import { RandomNumber } from "./RandomNumber";
 
 export default function Home() {
   return (
@@ -13,6 +14,13 @@ export default function Home() {
         }}
       >
         <RandomDog />
+      </SWRConfig>
+      <SWRConfig
+        value={{
+          fallback: { randomNumber: getRandomNumber() },
+        }}
+      >
+        <RandomNumber />
       </SWRConfig>
     </main>
   );
