@@ -6,10 +6,9 @@ import { RandomDog } from "./RandomDog";
 export default function Home() {
   const queryClient = getQueryClient();
 
-  // look ma, no await
   queryClient.prefetchQuery({
     queryKey: ["randomDog"],
-    queryFn: getRandomDog,
+    queryFn: getRandomDog, // No await, passing a promise
   });
 
   return (
