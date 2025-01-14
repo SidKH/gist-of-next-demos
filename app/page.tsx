@@ -1,25 +1,30 @@
 export const dynamic = "force-dynamic";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
-import { getRandomDog } from "./data";
-import { RandomDog } from "./RandomDog";
+
+import { revalidateTag } from "next/cache";
+import { Button } from "@/components/ui/button";
 
 export default async function Home() {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchQuery({
-    queryKey: ["randomDog"],
-    queryFn: getRandomDog,
+  const res = await fetch("https://dog.ceo/api/breeds/image/random", {
+    next: {
+      tags: ["randomDog"],
+    },
   });
 
+  const { message } = await res.json();
+
+  async function refetchDog() {
+    "use server";
+    revalidateTag("randomDog");
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <RandomDog />
-      </HydrationBoundary>
-    </main>
+    <div className="flex flex-col gap-4 items-center">
+      <div className="w-64 h-64 flex justify-center items-center bg-zinc-50 p-8">
+        <img className="max-w-full max-h-full" src={message} alt="Random Dog" />
+      </div>
+      <form action={refetchDog}>
+        <Button>Another dog</Button>
+      </form>
+    </div>
   );
 }
