@@ -2,6 +2,7 @@ import { db } from "@/db";
 import { comments, posts } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
+import { format } from "date-fns";
 
 export default async function BlogPostPage({
   params,
@@ -24,8 +25,8 @@ export default async function BlogPostPage({
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
           {post.title}
         </h1>
-        <p className="text-muted-foreground">
-          {post.createdAt.toLocaleDateString()}
+        <p className="text-muted-foreground text-sm mt-2">
+          {format(post.createdAt, "MMMM d, yyyy")}
         </p>
         <p className="leading-7 [&:not(:first-child)]:mt-6">{post.content}</p>
       </div>

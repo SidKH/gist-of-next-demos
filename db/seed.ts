@@ -3,8 +3,8 @@ import { posts, comments } from "./schema";
 
 async function seed() {
   // Delete existing data
-  await db.delete(posts);
   await db.delete(comments);
+  await db.delete(posts);
 
   // Create a sample post
   const post = await db
@@ -13,7 +13,7 @@ async function seed() {
       title: "Getting Started with Web Development",
       slug: "getting-started",
       content:
-        "Web development is an exciting journey. Here are some tips to get started...",
+        "Web development is an exciting journey. Here are some tips to get started with web development. This is a test post to see if the comments are working. ",
     })
     .returning();
 
