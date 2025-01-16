@@ -2,7 +2,6 @@ import { db } from "@/db";
 import { comments, posts } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 export default async function BlogPostPage({
   params,
@@ -34,9 +33,7 @@ export default async function BlogPostPage({
         <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
           Comments
         </h3>
-        <Suspense fallback={<div className="py-8">Loading...</div>}>
-          <Comments postId={post.id} />
-        </Suspense>
+        <Comments postId={post.id} />
       </div>
     </div>
   );
