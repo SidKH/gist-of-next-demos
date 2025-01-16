@@ -1,8 +1,6 @@
-import { db } from "@/db";
-import { comments, posts } from "@/db/schema";
-import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
+import { getComments, getPost } from "@/data/posts";
 
 export default async function BlogPostPage({
   params,
@@ -11,9 +9,7 @@ export default async function BlogPostPage({
 }) {
   const { slug } = await params;
 
-  const post = await db.query.posts.findFirst({
-    where: eq(posts.slug, slug),
-  });
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();
@@ -41,10 +37,7 @@ export default async function BlogPostPage({
 }
 
 async function Comments({ postId }: { postId: number }) {
-  const result = await db
-    .select()
-    .from(comments)
-    .where(eq(comments.postId, postId));
+  const result = await getComments(postId);
 
   return (
     <div>
