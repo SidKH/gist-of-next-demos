@@ -1,6 +1,10 @@
-import { notFound } from "next/navigation";
+import { db } from "@/db";
+import { comments, posts } from "@/db/schema";
+import { eq } from "drizzle-orm";
+import { notFound, redirect } from "next/navigation";
 import { format } from "date-fns";
 import { getComments, getPost } from "@/data/posts";
+import { auth } from "@/auth";
 
 export default async function BlogPostPage({
   params,
@@ -8,6 +12,12 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  const session = await auth();
+
+  if (!session) {
+    redirect("/");
+  }
 
   const post = await getPost(slug);
 

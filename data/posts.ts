@@ -1,12 +1,15 @@
+import "server-only";
+
 import { db } from "@/db";
 import { comments, posts } from "@/db/schema";
 import { eq } from "drizzle-orm";
-import "server-only";
 
 export async function getPost(slug: string) {
-  return db.query.posts.findFirst({
+  const post = await db.query.posts.findFirst({
     where: eq(posts.slug, slug),
   });
+
+  return post;
 }
 
 export async function getComments(postId: number) {
