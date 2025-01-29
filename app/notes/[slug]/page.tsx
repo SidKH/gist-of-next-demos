@@ -1,18 +1,20 @@
 import { db } from "@/db";
 import { format } from "date-fns";
-import { notFound } from "next/navigation";
 import { comments, notes } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
 export default async function NotePage({
-  params: { slug },
+  params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
+
   const note = await db.query.notes.findFirst({
     where: eq(notes.slug, slug),
   });
 
+  //#region Rest of the code
   if (!note) {
     notFound();
   }
@@ -33,6 +35,7 @@ export default async function NotePage({
       <Comments noteId={note.id} />
     </article>
   );
+  //#endregion
 }
 
 async function Comments({ noteId }: { noteId: number }) {
@@ -40,6 +43,7 @@ async function Comments({ noteId }: { noteId: number }) {
     where: eq(comments.noteId, noteId),
   });
 
+  //#region Rest of the code
   return (
     <ul className="space-y-4 py-4">
       {result.map((comment) => (
@@ -50,4 +54,5 @@ async function Comments({ noteId }: { noteId: number }) {
       ))}
     </ul>
   );
+  //#endregion
 }
