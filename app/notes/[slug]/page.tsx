@@ -1,6 +1,6 @@
+import { db } from "@/db";
 import { format } from "date-fns";
 import { notFound } from "next/navigation";
-import { db } from "@/db";
 import { comments, notes } from "@/db/schema";
 import { eq } from "drizzle-orm";
 
@@ -39,13 +39,13 @@ async function Comments({ noteId }: { noteId: number }) {
   });
 
   return (
-    <div className="space-y-4">
+    <ul className="space-y-4 py-4">
       {result.map((comment) => (
-        <div key={comment.id} className="rounded-lg bg-muted p-4">
-          <div className="mb-2 text-sm font-medium">{comment.userName}</div>
+        <li key={comment.id}>
+          <p className="font-semibold">{comment.userName}</p>
           <p>{comment.content}</p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
