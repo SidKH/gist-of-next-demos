@@ -19,7 +19,9 @@ export default async function NotePage({
 
   return (
     <article className="prose mx-auto dark:prose-invert">
-      <h1 className="mb-2">{note.title}</h1>
+      <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-2">
+        {note.title}
+      </h1>
       <time className="text-sm text-gray-500">
         {format(note.createdAt, "MMMM d, yyyy")}
       </time>
