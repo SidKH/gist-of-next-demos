@@ -1,6 +1,6 @@
 import { serial, text, timestamp, pgTable } from "drizzle-orm/pg-core";
 
-export const posts = pgTable("posts", {
+export const notes = pgTable("notes", {
   id: serial("id").primaryKey(),
   title: text("title").notNull(),
   slug: text("slug").notNull().unique(),
@@ -12,8 +12,8 @@ export const comments = pgTable("comments", {
   id: serial("id").primaryKey(),
   content: text("content").notNull(),
   userName: text("user_name").notNull(),
-  postId: serial("post_id")
-    .references(() => posts.id)
+  noteId: serial("note_id")
+    .references(() => notes.id)
     .notNull(),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
