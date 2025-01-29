@@ -1,7 +1,10 @@
+// #region imports
 import { db } from "@/db";
 import { format } from "date-fns";
 import { comments, notes } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { notFound } from "next/navigation";
+// #endregion
 
 export default async function NotePage({
   params,
@@ -14,7 +17,7 @@ export default async function NotePage({
     where: eq(notes.slug, slug),
   });
 
-  //#region Rest of the code
+  //#region rest of the code
   if (!note) {
     notFound();
   }
@@ -43,7 +46,7 @@ async function Comments({ noteId }: { noteId: number }) {
     where: eq(comments.noteId, noteId),
   });
 
-  //#region Rest of the code
+  //#region rest of the code
   return (
     <ul className="space-y-4 py-4">
       {result.map((comment) => (
