@@ -1,4 +1,6 @@
-import { getNote } from "@/data/notes";
+import { db } from "@/db";
+import { notes } from "@/db/schema";
+import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
 export async function GET(
@@ -7,7 +9,9 @@ export async function GET(
 ) {
   const { slug } = await params;
 
-  const note = await getNote(slug);
+  const note = await db.query.notes.findFirst({
+    where: eq(notes.slug, slug),
+  });
 
   return NextResponse.json(note);
 }
