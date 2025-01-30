@@ -1,4 +1,6 @@
-export const revalidate = 5;
+export const dynamic = "force-static";
+
+import { revalidatePath } from "next/cache";
 
 export default async function Page({
   params,
@@ -9,9 +11,15 @@ export default async function Page({
   await sleep(1000);
   const number = (await params).number;
 
+  async function revalidate() {
+    "use server";
+    revalidatePath(`/${number}`);
+  }
+
   return (
     <div className="text-4xl font-bold tracking-tight w-screen h-screen flex items-center justify-center">
       Page {number}
+      <button>Revalidate</button>
     </div>
   );
 }
