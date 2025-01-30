@@ -19,7 +19,9 @@ export default async function Page({
   return (
     <div className="text-4xl font-bold tracking-tight w-screen h-screen flex items-center justify-center">
       Page {number}
-      <button>Revalidate</button>
+      <form action={revalidate}>
+        <button>Revalidate</button>
+      </form>
     </div>
   );
 }
