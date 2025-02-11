@@ -1,6 +1,7 @@
 export interface Pokemon {
   id: number;
   name: string;
+  url: string;
   types: string[];
 }
 
@@ -13,5 +14,5 @@ export interface PokemonType {
 export interface PokemonTypeResponse {
   id: number;
   name: string;
-  pokemon: Pokemon[];
+  pokemon: { pokemon: Pokemon }[];
 }
