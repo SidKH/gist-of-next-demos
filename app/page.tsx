@@ -13,12 +13,14 @@ export default function Home() {
 
   const { data } = useSWR(
     `https://pokeapi.co/api/v2/type/${selectedType}`,
+    // #region swr options
     async (url: string) => {
       const response = await fetch(url);
       const data = await response.json();
       return data.pokemon.map((p: { pokemon: Pokemon }) => p.pokemon);
     },
     { keepPreviousData: true }
+    // #endregion
   );
 
   return (
