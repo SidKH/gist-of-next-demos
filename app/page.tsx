@@ -1,5 +1,7 @@
 import { fetchData, fetchMetadata } from "./data";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata() {
   const data = await fetchMetadata();
   return {
