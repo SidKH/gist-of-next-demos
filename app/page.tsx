@@ -1,7 +1,18 @@
-export default function Home() {
+import { fetchData, fetchMetadata } from "./data";
+
+export async function generateMetadata() {
+  const data = await fetchMetadata();
+  return {
+    title: data.title,
+  };
+}
+
+export default async function Home() {
+  const data = await fetchData();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      Home
+      {data.content}
     </main>
   );
 }
