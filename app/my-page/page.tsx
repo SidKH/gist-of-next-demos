@@ -1,7 +1,19 @@
+import { Suspense } from "react";
+
 export const dynamic = "force-dynamic";
 
 export default async function MyPage() {
-  return <MyComponent />;
+  return (
+    <Suspense
+      fallback={
+        <div className="flex h-screen w-screen items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
+      <MyComponent />
+    </Suspense>
+  );
 }
 
 async function MyComponent() {
