@@ -5,7 +5,9 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <Button asChild>
-        <Link href="/my-page">Go to My Page</Link>
+        <Link prefetch={false} href="/my-page">
+          Go to My Page
+        </Link>
       </Button>
     </main>
   );
