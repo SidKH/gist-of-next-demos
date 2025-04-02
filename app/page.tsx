@@ -1,7 +1,10 @@
+"use client";
+import TheAnswer from "./the-answer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      Home
-    </main>
+    <div className="flex flex-col items-center h-screen justify-center text-4xl font-bold">
+      <TheAnswer />
+    </div>
   );
 }
