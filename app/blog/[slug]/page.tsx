@@ -29,8 +29,3 @@ async function ViewsBadge({ id }: { id: string }) {
     <Badge variant="outline">{views} views</Badge>
   );
 }
-
-export async function generateStaticParams() {
-  const slugs = await getAllSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
