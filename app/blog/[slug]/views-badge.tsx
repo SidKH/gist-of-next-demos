@@ -1,6 +1,8 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Loader2 } from "lucide-react";
 import useSWR from "swr";
 
 const fetcher = (url: string) =>
@@ -13,13 +15,13 @@ export function ViewsBadge({ id }: { id: string }) {
   );
   return (
     <Badge
-      className="w-24 text-center"
+      className="w-24 text-center h-[22px] flex items-center justify-center"
       variant="outline"
     >
       {data ? (
-        <span className="fade-in">{data} views</span>
+        <span>{data} views</span>
       ) : (
-        <span>&nbsp;</span>
+        <Skeleton className="w-16 h-2" />
       )}
     </Badge>
   );
