@@ -16,7 +16,11 @@ export function ViewsBadge({ id }: { id: string }) {
       className="w-24 text-center"
       variant="outline"
     >
-      {data ? `${data} views` : "..."}
+      {data ? (
+        <span className="fade-in">{data} views</span>
+      ) : (
+        <span>&nbsp;</span>
+      )}
     </Badge>
   );
 }
