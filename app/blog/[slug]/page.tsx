@@ -1,4 +1,4 @@
-import { getPost } from "@/lib/data";
+import { getAllSlugs, getPost } from "@/lib/data";
 import { ViewsBadge } from "./views-badge";
 
 export default async function BlogPost({
@@ -17,4 +17,9 @@ export default async function BlogPost({
       <div className="my-4">{post.content}</div>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
