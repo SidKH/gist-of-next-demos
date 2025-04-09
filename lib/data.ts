@@ -17,6 +17,9 @@ export async function getPost(slug: string) {
 export async function getViews(id: string) {
   console.log(id);
 
+  await new Promise((resolve) =>
+    setTimeout(resolve, 500)
+  );
   // Get current timestamp in seconds
   const now = Math.floor(Date.now() / 1000);
 
