@@ -2,7 +2,6 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Loader2 } from "lucide-react";
 import useSWR from "swr";
 
 const fetcher = (url: string) =>
