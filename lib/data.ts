@@ -1,5 +1,5 @@
 export async function getAllSlugs() {
-  return Promise.resolve(["my-blog-post"]);
+  return Promise.resolve(["hello"]);
 }
 
 export async function getPost(slug: string) {
