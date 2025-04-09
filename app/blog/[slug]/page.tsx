@@ -1,9 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import {
-  getAllSlugs,
-  getPost,
-  getViews,
-} from "@/lib/data";
+import { getPost, getViews } from "@/lib/data";
 
 export default async function BlogPost({
   params,
