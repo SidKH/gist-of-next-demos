@@ -38,19 +38,13 @@ export function NavLink({
   const pathName = usePathname();
   const isActive = pathName === props.href;
 
-  let currentState = props.children;
-
-  if (isActive && activeState) {
-    currentState = activeState;
-  }
-
   return (
     <Link
       {...props}
       className="flex gap-2 items-center"
     >
       <LoadingStatus pendingState={pendingState}>
-        {currentState}
+        {isActive ? activeState : props.children}
       </LoadingStatus>
     </Link>
   );
