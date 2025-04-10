@@ -9,7 +9,6 @@ export default function Sidebar() {
         {links.map((link) => (
           <li key={link.href} className="py-2">
             <NavLink
-              className="flex gap-2 items-center"
               prefetch={false}
               href={link.href}
               activeState={
