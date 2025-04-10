@@ -10,7 +10,7 @@ import {
   ReactNode,
 } from "react";
 
-export default function LoadingStatus({
+export default function PendingStatus({
   children,
   pendingState,
 }: {
@@ -45,11 +45,11 @@ export function NavLink({
 
   return (
     <Link {...props}>
-      <LoadingStatus
+      <PendingStatus
         pendingState={pendingState || currentState}
       >
         {currentState}
-      </LoadingStatus>
+      </PendingStatus>
     </Link>
   );
 }
