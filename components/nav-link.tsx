@@ -38,9 +38,10 @@ export function NavLink({
   const pathName = usePathname();
   const isActive = pathName === props.href;
 
-  const currentState = isActive
-    ? activeState
-    : props.children;
+  const currentState =
+    activeState && isActive
+      ? activeState
+      : props.children;
 
   return (
     <Link
