@@ -44,10 +44,7 @@ export function NavLink({
       : props.children;
 
   return (
-    <Link
-      {...props}
-      className="flex gap-2 items-center"
-    >
+    <Link {...props}>
       <LoadingStatus
         pendingState={pendingState || currentState}
       >
