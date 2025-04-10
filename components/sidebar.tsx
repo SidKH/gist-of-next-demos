@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 
 export default function Sidebar() {
   return (
-    <div className="w-64 bg-muted p-4">
+    <div className="w-48 bg-muted p-4">
       <ul className="divide-y">
         {links.map((link) => (
           <li key={link.href} className="py-2">

@@ -11,7 +11,7 @@ export default function RootLayout({
       <body className="h-screen">
         <div className="flex h-full">
           <Sidebar />
-          <div className="flex-1 h-full flex justify-center items-center">
+          <div className="flex-1 h-full flex justify-center pt-12">
             {children}
           </div>
         </div>
