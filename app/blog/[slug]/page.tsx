@@ -1,9 +1,5 @@
-import { Badge } from "@/components/ui/badge";
-import {
-  getAllSlugs,
-  getPost,
-  getViews,
-} from "@/lib/data";
+import { ViewsBadge } from "./views-badge";
+import { getAllSlugs, getPost } from "@/lib/data";
 
 export default async function BlogPost({
   params,
@@ -20,13 +16,6 @@ export default async function BlogPost({
       <ViewsBadge id={post.id} />
       <div className="my-4">{post.content}</div>
     </div>
-  );
-}
-
-async function ViewsBadge({ id }: { id: string }) {
-  const views = await getViews(id);
-  return (
-    <Badge variant="outline">{views} views</Badge>
   );
 }
 
