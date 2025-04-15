@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+
 export function ClientComponent() {
-  throw new Error("ClientComponent");
-  return <div>ClientComponent</div>;
+  useEffect(() => {
+    throw new Error("ClientComponent");
+  }, []);
+
+  return (
+    <div onClick={() => alert("clicked")}>
+      ClientComponent
+    </div>
+  );
 }
