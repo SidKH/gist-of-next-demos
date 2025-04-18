@@ -1,5 +1,7 @@
 import { redis } from "@/lib/redis";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const entry = (await redis.get("entry")) as string;
 
