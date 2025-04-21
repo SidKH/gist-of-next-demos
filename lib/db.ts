@@ -15,3 +15,11 @@ export async function getDataWashington() {
   const data = await sql`SELECT * FROM entries;`;
   return data[0].message;
 }
+
+export async function getDataLondon() {
+  const sql = neon(
+    process.env.DATABASE_URL_LONDON as string
+  );
+  const data = await sql`SELECT * FROM entries;`;
+  return data[0].message;
+}
