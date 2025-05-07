@@ -9,6 +9,7 @@ export default function Chat() {
     handleInputChange,
     handleSubmit,
   } = useChat();
+
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch divide-y dark:divide-zinc-800">
       {messages.map((message) => (

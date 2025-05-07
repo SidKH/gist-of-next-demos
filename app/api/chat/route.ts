@@ -1,16 +1,26 @@
+// #region imports
 import { openai } from "@ai-sdk/openai";
-import { smoothStream, streamText } from "ai";
+import { streamText, tool } from "ai";
+import { z } from "zod";
 
-// Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
+// #endregion
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const result = streamText({
-    model: openai("gpt-4o"),
+    model: openai("gpt-4o-mini"),
     messages,
-    experimental_transform: smoothStream(),
+    tools: {
+      getTime: tool({
+        description: "Get server time",
+        parameters: z.object({}),
+        execute: async () => {
+          return new Date().toLocaleTimeString();
+        },
+      }),
+    },
   });
 
   return result.toDataStreamResponse();
