@@ -11,16 +11,10 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: openai("gpt-4o-mini"),
+    system:
+      "Initiate conversation by asking philosophical question",
     messages,
-    tools: {
-      getTime: tool({
-        description: "Get server time",
-        parameters: z.object({}),
-        execute: async () => {
-          return new Date().toLocaleTimeString();
-        },
-      }),
-    },
+    temperature: 1,
   });
 
   return result.toDataStreamResponse();
