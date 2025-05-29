@@ -1,14 +1,10 @@
 import Image from "next/image";
+import img from "@/public/image-2.png";
 
 export default function Home() {
   return (
     <div className="flex gap-4 items-center h-screen justify-center">
-      <Image
-        src="/image-2.png"
-        alt="logo"
-        width={536}
-        height={354}
-      />
+      <Image src={img} alt="logo" />
     </div>
   );
 }
