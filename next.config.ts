@@ -1,10 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  logging: {
-    fetches: {
-      fullUrl: true,
-    },
+  images: {
+    minimumCacheTTL: 2678400, // 31 days
   },
 };
 
