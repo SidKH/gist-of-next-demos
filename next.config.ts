@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { hostname: "fastly.picsum.photos" },
     ],
-    minimumCacheTTL: 2678400, // 31 days
+    minimumCacheTTL: 86400, // 1 day
   },
 };
 
