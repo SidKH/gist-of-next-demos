@@ -25,9 +25,11 @@ async function getDataC(): Promise<string> {
 }
 
 export default async function Page() {
-  const dataA = await getDataA();
-  const dataB = await getDataB();
-  const dataC = await getDataC();
+  const [dataA, dataB, dataC] = await Promise.all([
+    getDataA(),
+    getDataB(),
+    getDataC(),
+  ]);
 
   return (
     <div className="flex gap-4 items-center h-screen justify-center">
