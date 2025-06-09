@@ -7,6 +7,7 @@ export function Footer() {
         <li>
           <Link
             className="underline text-sm text-muted-foreground"
+            prefetch={false}
             href="/privacy"
           >
             Privacy
@@ -15,6 +16,7 @@ export function Footer() {
         <li>
           <Link
             className="underline text-sm text-muted-foreground"
+            prefetch={false}
             href="/terms"
           >
             Terms
@@ -23,6 +25,7 @@ export function Footer() {
         <li>
           <Link
             className="underline text-sm text-muted-foreground"
+            prefetch={false}
             href="/contact"
           >
             Contact
