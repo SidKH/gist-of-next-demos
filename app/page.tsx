@@ -1,5 +1,5 @@
 import Image from "next/image";
-import image from "./dog.png";
+import image from "./import-image.png";
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <Image
         width={536}
         height={354}
-        src="/dog.png"
+        src="/public-image.png"
         alt="dog"
       />
       <Image
