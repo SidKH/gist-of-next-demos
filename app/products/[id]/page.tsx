@@ -1,3 +1,5 @@
+// app/products/[id]/page.tsx
+
 export default async function Product({
   params,
 }: {
@@ -9,7 +11,7 @@ export default async function Product({
   const { id } = await params;
   return (
     <div className="w-screen h-screen flex justify-center items-center text-3xl font-bold">
-      Item: {id}
+      Product: {id}
     </div>
   );
 }

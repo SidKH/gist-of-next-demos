@@ -9,7 +9,7 @@ export default function Products() {
             className="w-full hover:border-stone-300 bg-white aspect-square border rounded-xl flex items-center justify-center"
             href={`/products/${index + 1}`}
           >
-            Item {index + 1}
+            Product {index + 1}
           </Link>
         </li>
       ))}
