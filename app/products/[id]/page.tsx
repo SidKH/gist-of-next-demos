@@ -1,5 +1,6 @@
 // app/products/[id]/page.tsx
 
+export const dynamic = "force-static";
 export const revalidate = 60; // 1 minute
 
 export default async function Product({
