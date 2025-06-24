@@ -1,7 +1,10 @@
 // app/products/[id]/page.tsx
+export const dynamicParams = true;
 
-export const dynamic = "force-static";
-export const revalidate = 60; // 1 minute
+export async function generateStaticParams() {
+  // Popular products
+  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+}
 
 export default async function Product({
   params,
