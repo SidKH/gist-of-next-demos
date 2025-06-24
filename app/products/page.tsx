@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export async function generateStaticParams() {
+  // Popular products
+  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+}
+
 export default function Products() {
   return (
     <ul className="grid grid-cols-3 gap-4 max-w-xl mx-auto py-10">
