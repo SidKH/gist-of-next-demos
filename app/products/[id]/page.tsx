@@ -3,7 +3,7 @@ export const dynamicParams = true;
 
 export async function generateStaticParams() {
   // Popular products
-  return [{ id: "1" }, { id: "2" }, { id: "3" }];
+  return [];
 }
 
 export default async function Product({
