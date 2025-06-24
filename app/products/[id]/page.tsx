@@ -1,9 +1,6 @@
 // app/products/[id]/page.tsx
 
-export async function generateStaticParams() {
-  // Popular products
-  return [{ id: "1" }, { id: "2" }, { id: "3" }];
-}
+export const revalidate = 60; // 1 minute
 
 export default async function Product({
   params,
