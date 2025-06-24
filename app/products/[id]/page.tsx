@@ -1,10 +1,4 @@
 // app/products/[id]/page.tsx
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  // Popular products
-  return [];
-}
 
 export default async function Product({
   params,
