@@ -1,7 +1,26 @@
-export default function Home() {
+import DynamicFontLoader from "@/components/dynamic-font-loader";
+
+export default async function Home() {
+  const fontName = "MyFont";
+
   return (
-    <div className="flex gap-4 items-center h-screen justify-center">
-      Home
-    </div>
+    <>
+      <div
+        className={`font-${fontName} flex gap-4 items-center h-screen justify-center text-5xl`}
+      >
+        Home
+      </div>
+      <DynamicFontLoader
+        fontName={fontName}
+        fontUrl={await getUserFontULR()}
+      />
+    </>
   );
+}
+
+async function getUserFontULR() {
+  await new Promise((resolve) =>
+    setTimeout(resolve, 1000)
+  );
+  return "https://res.cloudinary.com/dulgvdcw5/raw/upload/v1751037245/ManufacturingConsent-Regular_zn8kl9.ttf";
 }
