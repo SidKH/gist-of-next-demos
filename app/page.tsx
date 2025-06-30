@@ -18,11 +18,9 @@ export default async function Home() {
   );
 }
 
-// #region rest of the file
 async function getUserFontULR() {
   await new Promise((resolve) =>
     setTimeout(resolve, 1000)
   );
   return "https://res.cloudinary.com/dulgvdcw5/raw/upload/v1751037245/ManufacturingConsent-Regular_zn8kl9.ttf";
 }
-// #endregion
