@@ -1,4 +1,4 @@
-import DynamicFontLoader from "@/components/dynamic-font-loader";
+import FontLoader from "@/components/font-loader";
 
 export default async function Home() {
   const fontName = "MyFont";
@@ -10,7 +10,7 @@ export default async function Home() {
       >
         Home
       </div>
-      <DynamicFontLoader
+      <FontLoader
         fontName={fontName}
         fontUrl={await getUserFontULR()}
       />
@@ -18,9 +18,11 @@ export default async function Home() {
   );
 }
 
+// #region rest of the file
 async function getUserFontULR() {
   await new Promise((resolve) =>
     setTimeout(resolve, 1000)
   );
   return "https://res.cloudinary.com/dulgvdcw5/raw/upload/v1751037245/ManufacturingConsent-Regular_zn8kl9.ttf";
 }
+// #endregion

@@ -1,6 +1,6 @@
 "use client";
 
-export default function DynamicFontLoader({
+export default function FontLoader({
   fontName,
   fontUrl,
 }: {
