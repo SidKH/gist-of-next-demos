@@ -2,8 +2,9 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { revalidatePath } from "next/cache";
-import { createClient } from "redis";
 // #endregion
+
+import { createClient } from "redis";
 
 const redis = await createClient({
   url: process.env.REDIS_URL,
