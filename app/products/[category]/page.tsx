@@ -1,5 +1,7 @@
+// #region imports
 import { getProducts } from "@/lib/data";
 import { notFound } from "next/navigation";
+// #endregion
 
 export default async function Products({
   params,

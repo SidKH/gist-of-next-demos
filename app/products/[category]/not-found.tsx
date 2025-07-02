@@ -1,9 +1,11 @@
 "use client";
 
+// #region imports
 import { Button } from "@/components/ui/button";
 import illustration from "./illustration.svg";
 import Image from "next/image";
 import { useParams } from "next/navigation";
+// #endregion
 
 export default function NotFound() {
   const params = useParams();
