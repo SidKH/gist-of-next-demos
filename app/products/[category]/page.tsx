@@ -1,7 +1,7 @@
 // #region imports
-import { getProducts } from "@/lib/data";
-// #endregion
 import { notFound } from "next/navigation";
+const CATEGORIES = ["pants", "accessories"];
+// #endregion
 
 export default async function Products({
   params,
@@ -10,15 +10,14 @@ export default async function Products({
 }) {
   const { category } = await params;
 
-  const products = await getProducts(category);
-
-  if (!products) {
+  if (!CATEGORIES.includes(category)) {
     notFound();
   }
-
+  // #region rest of the code
   return (
     <div>
       <div>Hello world</div>
     </div>
   );
+  // #endregion
 }
