@@ -1,7 +1,22 @@
+import { getProducts } from "@/lib/data";
 import { notFound } from "next/navigation";
 
-export default function Products() {
-  notFound();
+export default async function Products({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const { category } = await params;
 
-  return <div>Products</div>;
+  const products = await getProducts(category);
+
+  if (!products) {
+    notFound();
+  }
+
+  return (
+    <div>
+      <div>Hello world</div>
+    </div>
+  );
 }

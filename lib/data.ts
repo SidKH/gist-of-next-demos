@@ -5,3 +5,7 @@ export async function getData() {
   const data = await res.json();
   return data;
 }
+
+export async function getProducts(category: string) {
+  return null;
+}
