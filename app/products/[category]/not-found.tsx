@@ -23,7 +23,7 @@ export default function NotFound() {
         />
       </div>
 
-      <Button>Try other products</Button>
+      <Button size="sm">Try other products</Button>
     </div>
   );
 }

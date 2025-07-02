@@ -7,5 +7,6 @@ export async function getData() {
 }
 
 export async function getProducts(category: string) {
+  console.log(category);
   return null;
 }
