@@ -12,7 +12,7 @@ export default function NotFound() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      <p className="mb-6 text-xl font-medium">
+      <p className="mb-6 text-lg font-medium">
         Category &quot;{params.category}&quot;
         doesn&apos;t exist
       </p>
