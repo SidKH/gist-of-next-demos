@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 export default async function AdminPage() {
   const userIsAdmin = await isAdmin();
   if (!userIsAdmin) {
-    notFound();
+    throw new Response("Unauthorized", {
+      status: 401,
+    });
   }
 
   return (
