@@ -1,7 +1,6 @@
 // #region Imports
 import { Button } from "@/components/ui/button";
 import { isAdmin } from "@/lib/auth";
-import { notFound } from "next/navigation";
 export const dynamic = "force-dynamic";
 // #endregion
 
