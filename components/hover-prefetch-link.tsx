@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export function HoverPrefetchLink(props) {
+export function HoverPrefetchLink(
+  props: LinkProps & React.ComponentProps<"a">
+) {
   const [active, setActive] = useState(false);
 
   return (
