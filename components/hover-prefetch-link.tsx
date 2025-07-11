@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import { useState } from "react";
 
 export function HoverPrefetchLink(
