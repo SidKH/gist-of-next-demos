@@ -3,7 +3,7 @@
 import Link, { LinkProps } from "next/link";
 import { useState } from "react";
 
-export function AppLink(
+export function HowerPrefetchLink(
   props: LinkProps & React.ComponentProps<"a">
 ) {
   const [active, setActive] = useState(false);
