@@ -4,5 +4,9 @@ export default async function MyRoutePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  return <div>My Route {id}</div>;
+  return (
+    <div className="flex justify-center items-center h-screen text-3xl font-medium">
+      My Route {id}
+    </div>
+  );
 }
