@@ -1,4 +1,11 @@
-import type { NextRequest } from "next/server";
+import {
+  NextRequest,
+  NextResponse,
+} from "next/server";
+
+function auth() {
+  return false;
+}
 
 export function middleware(request: NextRequest) {
   console.log(
@@ -6,6 +13,12 @@ export function middleware(request: NextRequest) {
     request.method,
     request.url
   );
+
+  if (request.method === "POST" && !auth()) {
+    return NextResponse.redirect(
+      new URL("/login", request.url)
+    );
+  }
 }
 
 export const config = {
@@ -13,9 +26,6 @@ export const config = {
     {
       source:
         "/((?!api|_next/static|_next/image|favicon.ico).*)",
-      missing: [
-        { type: "header", key: "next-action" },
-      ],
     },
   ],
 };
