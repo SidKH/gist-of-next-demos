@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  experimental: {
+    devtoolSegmentExplorer: true,
+  },
 };
 
 export default nextConfig;
