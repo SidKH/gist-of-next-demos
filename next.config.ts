@@ -6,6 +6,11 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  images: {
+    remotePatterns: [
+      new URL("https://res.cloudinary.com/**"),
+    ],
+  },
 };
 
 export default nextConfig;
