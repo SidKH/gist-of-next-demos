@@ -41,15 +41,23 @@ async function TVShows({ query }: { query: string }) {
   const data = await response.json();
   return (
     <div className="grid grid-cols-3 gap-4">
-      {data.map((show: any) => (
-        <div key={show.show.id}>
-          <img
-            src={show.show.image.medium}
-            alt={show.show.name}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      ))}
+      {data.map(
+        (show: {
+          show: {
+            id: number;
+            image: { medium: string };
+            name: string;
+          };
+        }) => (
+          <div key={show.show.id}>
+            <img
+              src={show.show.image.medium}
+              alt={show.show.name}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )
+      )}
     </div>
   );
 }
