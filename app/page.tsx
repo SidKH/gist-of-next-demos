@@ -1,7 +1,10 @@
-export default function Home() {
+import Form from "next/form";
+
+export default function Page() {
   return (
-    <div className="flex gap-4 items-center h-screen justify-center">
-      Home
-    </div>
+    <Form action="/search">
+      <input name="query" />
+      <button type="submit">Submit</button>
+    </Form>
   );
 }
