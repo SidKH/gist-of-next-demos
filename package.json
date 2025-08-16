@@ -10,11 +10,11 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
-    "@tailwindcss/postcss": "^4.1.11",
+    "@tailwindcss/postcss": "^4.1.12",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.535.0",
-    "next": "^15.4.5",
+    "lucide-react": "^0.539.0",
+    "next": "^15.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "server-only": "^0.0.1",
@@ -22,14 +22,14 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@types/node": "^24.1.0",
-    "@types/react": "^19.1.9",
+    "@types/node": "^24.3.0",
+    "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "eslint": "^9.32.0",
-    "eslint-config-next": "^15.4.5",
+    "eslint": "^9.33.0",
+    "eslint-config-next": "^15.4.6",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.11",
-    "tw-animate-css": "^1.3.6",
+    "tailwindcss": "^4.1.12",
+    "tw-animate-css": "^1.3.7",
     "typescript": "^5.9.2"
   }
 }
