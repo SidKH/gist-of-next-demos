@@ -1,5 +1,7 @@
+// #region imports
 import { cookies } from "next/headers";
 import { Button } from "@/components/ui/button";
+// #endregion
 
 export default async function Home() {
   const cookieStore = await cookies();
