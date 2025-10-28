@@ -14,7 +14,9 @@ export default async function RandomCatPage() {
 }
 
 async function RandomCat() {
-  const response = await fetch("https://api.thecatapi.com/v1/images/search");
+  const response = await fetch("https://api.thecatapi.com/v1/images/search", {
+    cache: "no-store",
+  });
   const data = await response.json();
   const catImage = data[0].url;
 

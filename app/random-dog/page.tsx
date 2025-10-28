@@ -14,7 +14,9 @@ export default async function RandomDogPage() {
 }
 
 async function RandomDog() {
-  const response = await fetch("https://dog.ceo/api/breeds/image/random");
+  const response = await fetch("https://dog.ceo/api/breeds/image/random", {
+    cache: "no-store",
+  });
   const data = await response.json();
   const dogImage = data.message;
 
