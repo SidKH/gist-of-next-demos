@@ -9,7 +9,7 @@ export function NavLink({ href, children }: { href: string; children: React.Reac
   const pathname = usePathname();
   const isActive = pathname === href;
   return (
-    <Link className={cn("py-2 px-4 flex hover:opacity-90", isActive && "text-sky-400")} href={href}>
+    <Link className={cn("text-muted-foreground py-1.5 px-4 flex hover:text-white rounded-md", isActive && "bg-white/10 text-white")} href={href}>
       {children}
     </Link>
   );
