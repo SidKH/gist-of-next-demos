@@ -15,7 +15,5 @@ export default async function Page() {
 
 async function DynamicComponent() {
   const data = await fetchData();
-  return (
-      <Badge>{data}</Badge>
-  )
+  return <Badge>{data}</Badge>
 }
