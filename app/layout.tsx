@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
-        <aside className="w-52 border-r p-4">
+        <aside className="w-52 border-r p-4 bg-white/3">
           <nav>
             <ul className="space-y-1">
               <li>
