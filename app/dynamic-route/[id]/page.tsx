@@ -5,15 +5,13 @@ import { Suspense } from "react";
 export default async function Page() {
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold mb-4">Dynamic page</h1>
-      <Suspense fallback={<Badge variant="secondary">Loading...</Badge>}>
-        <DynamicComponent />
-      </Suspense>
+      <h1 className="text-3xl font-bold mb-4">Dynamic route</h1>
     </div>
   );
 }
 
-async function DynamicComponent() {
-  const data = await fetchData("dynamic");
+async function DynamicComponent(props: { params: Promise<{ id: string }> }) {
+  const { id } = await props.params;
+  const data = await fetchData(id);
   return <Badge>{data}</Badge>;
 }
