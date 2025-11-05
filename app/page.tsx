@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { fetchRandomNumber } from "@/lib/data";
-import { refresh, revalidatePath } from "next/cache";
+import { cacheLife, refresh, revalidatePath } from "next/cache";
 import { Suspense } from "react";
 
 export default function Home() {
@@ -32,6 +32,7 @@ export default function Home() {
 
 async function CachedComponent() {
   "use cache";
+  cacheLife("days");
   const data = await fetchRandomNumber();
   return (
     <div className="border-dashed border-2 p-4 w-40 text-center rounded-md">
