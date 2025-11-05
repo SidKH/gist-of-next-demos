@@ -5,8 +5,8 @@ import { Suspense } from "react";
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center flex-col gap-4 justify-center bg-zinc-50 font-sans dark:bg-black">
+      <CachedComponent />
       <Suspense>
-        <CachedComponent />
         <DynamicComponent />
       </Suspense>
       <form
