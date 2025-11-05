@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { fetchRandomNumber } from "@/lib/data";
 import { refresh, revalidatePath } from "next/cache";
 import { Suspense } from "react";
 
@@ -31,21 +32,19 @@ export default function Home() {
 
 async function CachedComponent() {
   "use cache";
-  const response = await fetch("https://dummyjson.com/quotes/random");
-  const data = await response.json();
+  const data = await fetchRandomNumber();
   return (
     <div className="border-dashed border-2 p-4 w-40 text-center rounded-md">
-      {data.quote}
+      {data}
     </div>
   );
 }
 
 async function DynamicComponent() {
-  const response = await fetch("https://dummyjson.com/quotes/random");
-  const data = await response.json();
+  const data = await fetchRandomNumber();
   return (
     <div className="border-dashed border-2 p-4 w-40 text-center rounded-md">
-      {data.quote}
+      {data}
     </div>
   );
 }
