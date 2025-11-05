@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { refresh, revalidatePath } from "next/cache";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center flex-col gap-4 justify-center bg-zinc-50 font-sans dark:bg-black">
       <CachedComponent />
-
+      <Suspense>
+        <DynamicComponent />
+      </Suspense>
       <form
         action={async () => {
           "use server";
@@ -28,11 +31,21 @@ export default function Home() {
 
 async function CachedComponent() {
   "use cache";
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-
+  const response = await fetch("https://dummyjson.com/quotes/random");
+  const data = await response.json();
   return (
     <div className="border-dashed border-2 p-4 w-40 text-center rounded-md">
-      Hello
+      {data.quote}
+    </div>
+  );
+}
+
+async function DynamicComponent() {
+  const response = await fetch("https://dummyjson.com/quotes/random");
+  const data = await response.json();
+  return (
+    <div className="border-dashed border-2 p-4 w-40 text-center rounded-md">
+      {data.quote}
     </div>
   );
 }
