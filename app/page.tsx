@@ -28,11 +28,11 @@ export default function Home() {
 
 async function CachedComponent() {
   "use cache";
-  const response = await fetch("https://randomuser.me/api/");
-  const data = await response.json();
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   return (
     <div className="border-dashed border-2 p-4 w-40 text-center rounded-md">
-      {data.results[0].name.first}
+      Hello
     </div>
   );
 }
