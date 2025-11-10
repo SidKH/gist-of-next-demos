@@ -37,9 +37,6 @@ export default function RootLayout({
               <li>
                 <NavLink href="/dynamic">Dynamic Page</NavLink>
               </li>
-              <li>
-                <NavLink href="/dynamic-route/1">Dynamic Route</NavLink>
-              </li>
             </ul>
           </nav>
         </aside>
