@@ -32,10 +32,10 @@ export default function RootLayout({
           <nav>
             <ul className="space-y-1">
               <li>
-                <NavLink href="/static">Static Page</NavLink>
+                <NavLink href="/page1">Page 1</NavLink>
               </li>
               <li>
-                <NavLink href="/dynamic">Dynamic Page</NavLink>
+                <NavLink href="/page2">Page 2</NavLink>
               </li>
             </ul>
           </nav>
