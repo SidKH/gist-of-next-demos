@@ -6,13 +6,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default async function MoviePage(props: PageProps<"/movie/[id]">) {
   return (
-    <div>
-      <div className="flex justify-center items-center h-screen divide-x">
-        <Pagination />
-        <Suspense fallback={<MovieSkeleton />}>
-          <Movie params={props.params} />
-        </Suspense>
-      </div>
+    <div className="flex justify-center items-center h-screen divide-x">
+      <Pagination />
+      <Suspense fallback={<MovieSkeleton />}>
+        <Movie params={props.params} />
+      </Suspense>
     </div>
   );
 }
