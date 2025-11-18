@@ -6,11 +6,13 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default async function MoviePage(props: PageProps<"/movie/[id]">) {
   return (
-    <div className="flex justify-center items-center h-screen divide-x">
-      <Pagination />
-      <Suspense fallback={<MovieSkeleton />}>
-        <Movie params={props.params} />
-      </Suspense>
+    <div>
+      <div className="flex justify-center items-center h-screen divide-x">
+        <Pagination />
+        <Suspense fallback={<MovieSkeleton />}>
+          <Movie params={props.params} />
+        </Suspense>
+      </div>
     </div>
   );
 }
@@ -29,8 +31,8 @@ async function Movie({ params }: { params: Promise<{ id: string }> }) {
         className="w-44 h-auto aspect-500/750 rounded-lg shadow-lg shrink-0"
       />
       <div className="flex flex-col w-60">
-        <h2 className="font-bold mb-1">{movie.title}</h2>
-        <p className="text-muted-foreground text-sm mb-3">
+        <h2 className="mb-1 font-bold">{movie.title}</h2>
+        <p className="text-muted-foreground text-xs mb-3">
           {new Date(movie.release_date).toLocaleDateString("en-US", {
             year: "numeric",
             month: "long",
@@ -51,19 +53,24 @@ async function Pagination() {
   "use cache";
   const movies = await fetchMoviesInTheaters();
   return (
-    <div className="grid grid-cols-4 gap-2 pr-4 mr-4 border-r ">
-      {movies.slice(0, 16).map((movie) => (
-        <Link href={`/movie/${movie.id}`} key={movie.id}>
-          <Image
-            key={movie.id}
-            src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`}
-            alt={movie.title}
-            width={92}
-            height={138}
-            className="w-10 h-auto rounded shadow-sm hover:shadow-md transition-shadow"
-          />
-        </Link>
-      ))}
+    <div>
+      <p className="mb-2 -mt-7 text-muted-foreground text-sm">
+        Now in theaters
+      </p>
+      <div className="grid grid-cols-4 gap-2 pr-4 mr-4 border-r ">
+        {movies.slice(0, 16).map((movie) => (
+          <Link href={`/movie/${movie.id}`} key={movie.id}>
+            <Image
+              key={movie.id}
+              src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`}
+              alt={movie.title}
+              width={92}
+              height={138}
+              className="w-10 h-auto rounded shadow-sm hover:shadow-md transition-shadow"
+            />
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
