@@ -39,3 +39,5 @@ yarn-error.log*
 next-env.d.ts
 
 todo.md
+.codex
+.cursor
