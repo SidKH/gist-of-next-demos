@@ -43,6 +43,8 @@
 
 :root {
   --radius: 0.625rem;
+  --slide-animation-distance: 100vw;
+  --demo-transition-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
@@ -116,5 +118,90 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+::view-transition-group(.fade),
+::view-transition-group(.slide-left),
+::view-transition-group(.slide-right) {
+  animation-duration: 420ms;
+  animation-timing-function: var(--demo-transition-ease);
+}
+
+::view-transition-old(.fade) {
+  animation-name: demo-fade-out;
+}
+
+::view-transition-new(.fade) {
+  animation-name: demo-fade-in;
+}
+
+::view-transition-old(.slide-left) {
+  animation-name: demo-slide-left-out;
+}
+
+::view-transition-new(.slide-left) {
+  animation-name: demo-slide-left-in;
+}
+
+::view-transition-old(.slide-right) {
+  animation-name: demo-slide-right-out;
+}
+
+::view-transition-new(.slide-right) {
+  animation-name: demo-slide-right-in;
+}
+
+@keyframes demo-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes demo-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes demo-slide-left-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(var(--slide-animation-distance) * -1));
+  }
+}
+
+@keyframes demo-slide-left-in {
+  from {
+    transform: translateX(var(--slide-animation-distance));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes demo-slide-right-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--slide-animation-distance));
+  }
+}
+
+@keyframes demo-slide-right-in {
+  from {
+    transform: translateX(calc(var(--slide-animation-distance) * -1));
+  }
+  to {
+    transform: translateX(0);
   }
 }
