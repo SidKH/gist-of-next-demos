@@ -12,10 +12,7 @@ export default function Home() {
         </h1>
         <div className="flex justify-center">
           <Button asChild variant="outline">
-            <Link
-              href="/about"
-              transitionTypes={["none"]}
-            >
+            <Link href="/about">
               Open about page
               <ArrowRight />
             </Link>
