@@ -12,7 +12,7 @@ export default function AboutPage() {
         </h1>
         <div className="flex justify-center">
           <Button asChild variant="outline">
-            <Link href="/" transitionTypes={["fade"]}>
+            <Link href="/" transitionTypes={["slide-right"]}>
               <ArrowLeft />
               Return home
             </Link>
