@@ -6,13 +6,13 @@ Where to look:
 
 [next.config.ts](./next.config.ts)
 
-```
+```ts
 experimental: { viewTransition: true }
 ```
 
 [app/layout.tsx](./app/layout.tsx)
 
-```
+```tsx
 <ViewTransition
   default={{
     default: "none",
@@ -27,18 +27,18 @@ experimental: { viewTransition: true }
 
 [app/page.tsx](./app/page.tsx)
 
-```
+```tsx
 <Link href="/about" transitionTypes={["slide-left"]} />
 ```
 
 [app/about/page.tsx](./app/about/page.tsx)
 
-```
+```tsx
 <Link href="/" transitionTypes={["slide-right"]} />
 ```
 
 [app/globals.css](./app/globals.css)
 
-```
+```css
 ::view-transition-* { ... }  /* + keyframes */
 ```
