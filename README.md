@@ -4,8 +4,41 @@ This app is a minimal App Router demo for the `transitionTypes` prop on `next/li
 
 Where to look:
 
-- `app/page.tsx`: link to `/about` with `slide-left`
-- `app/about/page.tsx`: link to `/` with `slide-right`
-- `app/layout.tsx`: root `ViewTransition` and type-to-class mapping
-- `app/globals.css`: `::view-transition-*` selectors and keyframes
-- `next.config.ts`: `experimental.viewTransition`
+[next.config.ts](./next.config.ts)
+
+```
+experimental: { viewTransition: true }
+```
+
+[app/layout.tsx](./app/layout.tsx)
+
+```
+<ViewTransition
+  default={{
+    default: "none",
+    fade: "fade",
+    "slide-left": "slide-left",
+    "slide-right": "slide-right",
+  }}
+>
+  {children}
+</ViewTransition>
+```
+
+[app/page.tsx](./app/page.tsx)
+
+```
+<Link href="/about" transitionTypes={["slide-left"]} />
+```
+
+[app/about/page.tsx](./app/about/page.tsx)
+
+```
+<Link href="/" transitionTypes={["slide-right"]} />
+```
+
+[app/globals.css](./app/globals.css)
+
+```
+::view-transition-* { ... }  /* + keyframes */
+```
