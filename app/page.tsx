@@ -1,9 +1,15 @@
+import ReactArticleDemo from "@/components/react-article-demo";
+
 export default function Home() {
   return (
-    <div>
-      <div className="flex items-center justify-center h-screen">
-        <h1>Hello World</h1>
-      </div>
+    <div className="min-h-screen bg-background">
+      <main className="mx-auto max-w-2xl px-6 py-14 sm:py-20">
+        <span
+          hidden
+          dangerouslySetInnerHTML={{ __html: "<!-- Article demo -->" }}
+        />
+        <ReactArticleDemo />
+      </main>
     </div>
   );
 }
